@@ -4,3 +4,5 @@ My own data structure practice set.
 #include<leetcode.com>
 
 #include<pintia.cn>
+
+#include<notes>
