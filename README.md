@@ -5,4 +5,4 @@ My own data structure practice set.
 
 #include<pintia.cn>
 
-#include<notes>
+#include<notes.me>
