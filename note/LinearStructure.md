@@ -171,7 +171,144 @@ List PtrL;
 1. 求表长
 
    ```c
+   int Length(List PtrL){
+       List p = PtrL;       //p指向表的第一个结点
+    int j = 0;
+       while (p){
+           p = p->Next;
+           j++;             //当前p指向的是第j个结点
+       }                    //p为NULL时退出循环
+       return j;
+   }
+   //时间性能为O(n)
+   ```
    
+2. 查找
+
+   （1）按序号查找：`FindKth`;
+
+   ```c
+   List FindKth(int K,List PtrL){
+       List p = PtrL;
+       int i = 1;
+       while (p != NULL && i < K){
+           p = p->Next;
+           i++;
+       }
+       if(i == K)                   //找到第K个，返回指针
+           return p;
+       else
+           return NULL;             //否则返回空
+   }
    ```
 
+   （2）按值查找：Find
+
+   ```c
+   List Find(ElementType X,List ptrL){
+       List p = PtrL;
+       while (p != NULL && p->Data != X)
+           p = p->Next;
+       return p;
+   }
+   ```
+
+   > 思考：如果将链式存储中`FindKth`的函数实现（如下）做个修改：把函数最后的if语句判断条件改为判断p是否为NULL，即：
+   >
+   > ```c
+   > if (p==NULL) return NULL;
+   > 
+   > else return p;
+   > ```
+   >
+   > 或者说直接简化为：return p;
+   >
+   > 对于这样的修改，程序还正确吗？为什么？
+   >
+   >  
+   >
+   > 答：错误。因为p初始被设为头指针PtrL，所以当输入不合法（k<1)时，程序不会进入循环，此时find函数未找到元素，因返回Null，但p却为PtrL
+
+3. 插入（在第i-1个结点后插入一个值为X的新结点）
+
+   （1）先构造一个新结点，用s指向;
+
+   （2）再找到链表的第i-1个结点，用p指向;
+
+   （3）然后修改指针，插入结点（p之后插入新结点是s）
    
+   ```c
+   List Insert(ElementType X,int i,List PtrL){
+       List p,s;
+       if(i == 1){                                     // 新结点在表头
+           s = (List)malloc(sizeof(struct LNode));     //申请、填装结点
+           s->Data = X;
+           s->Next = PtrL;
+           return s;                                   //返回新表头指针
+       }
+       p = FindKth(i-1,PtrL);
+       if(p == NULL){
+           printf("参数i错误");
+           return NULL;
+       }
+       else{
+           s = (List)malloc(sizeof(struct LNode));
+           s->Data = x;
+           s->Next = p->Next;
+           p->Next = s;
+           return PtrL;
+       }
+   }
+   ```
+   
+4. 删除
+
+   （1）先找到链表的第i-1个结点，用p指向;
+
+   （2）再用指针s指向要被删除的结点（p的下一个结点）;
+
+   （3）然后修改指针，删除s所指结点;
+
+   （4）释放s所指结点空间
+
+   ```c
+   List Delete(int i,List PtrL){
+       List p,s;
+       if(i == 1){                      
+           s = PtrL;
+           if(PtrL != NULL)
+               PtrL = PtrL->Next;
+           else
+               free(s);
+           return PtrL;
+       }
+       P = FindKth(i-1,PtrL);
+       if(p == NULL){
+           printf("第%d个结点不存在"，i-1);
+           return NULL;
+       }
+       else if(p->Next == NULL){
+           printf("第%d个结点不存在"，i);
+           return NULL;
+       }
+       else{
+           s = p->Next;
+           p->Next = s->Next;
+           free(s);
+           return PtrL;
+       }
+   }
+   ```
+
+### 广义表
+
+---
+
+略
+
+### 多重链表
+
+---
+
+略
+
