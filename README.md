@@ -1,8 +1,8 @@
-# Data_Structure_Practice
+# Data Structure Practice
+
 My own data structure practice set.
 
 #include<leetcode.com>
 
-#include<pintia.cn>
-
 #include<notes.me>
+
