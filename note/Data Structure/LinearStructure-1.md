@@ -312,3 +312,21 @@ List PtrL;
 
 略
 
+### 备注
+
+手动在main()中编写测试样例
+
+```C
+int main()
+{
+	sqlist *temp = (sqlist *)malloc(sizeof(sqlist));
+	int i;
+	temp->len = 10;
+	for(i=0;i<10;i++){         //结构体内数组赋值只能用循环的方式
+		temp->data[i] = i;
+	}
+	print(temp);
+	return 0;
+}//在主函数中编写测试代码的方法
+```
+

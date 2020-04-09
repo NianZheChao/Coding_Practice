@@ -109,3 +109,4 @@ struct book library;       //将library声明为一个使用book结构布局的�
 
 ```
 
+结构体内数组赋值必须用循环的方式
