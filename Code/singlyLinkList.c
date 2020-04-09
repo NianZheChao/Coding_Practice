@@ -127,6 +127,29 @@ int isExist(Lnode *head,elemtype key){
 }
 //在表中中搜索键值为key的元素，看其是否存在 
 
+Lnode *copy(Lnode *L){
+	Lnode *p,*head,*tail;
+	tail = (Lnode *)malloc(sizeof(Lnode));
+	head = (Lnode *)malloc(sizeof(Lnode));
+	head->next = NULL;
+	while(p->next != NULL){
+		L = L->next;
+		p = (Lnode *)malloc(sizeof(Lnode));
+		p->data = L->data;
+		tail->next = L;
+		tail = p;
+		tail->next = NULL;
+	}
+	return head;
+}
+//将单链表复制到另一个单链表中
+
+
+
+
+
+
+
 
 int main() {
 	return 0;

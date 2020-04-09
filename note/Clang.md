@@ -56,6 +56,28 @@ int main(void)
 }//这个程序是错误的，只有在定义的时候“a[常量]”表示的才是数组长度
 ```
 
+若要令函数返回数组，可以①使用结构体，②返回指向该数组的指针，如下：
+
+```C
+#include<stdio.h>
+#define N 10
+int main(){
+    int *addOne(int a[]);
+    int a[N]={1,2,3,4,5,6,7,8,9,10};
+    int i;
+    printf("\n调用函数之后:\n");
+    int *b = addOne(a);
+    for(i=0;i<N;i++)
+        printf("%d\t",b[i]);
+}
+int *addOne(int a[]){
+    int i;
+    for(i=0;i<N;i++)//全部加一
+        a[i] += 1;
+    return a;
+}
+```
+
 
 
 ## 指针
