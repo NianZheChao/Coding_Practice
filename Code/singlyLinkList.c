@@ -19,7 +19,7 @@ Lnode *creatHead(){
 	return head;
 }//创建单链表头结点
 
-void printList(Lnode *head){
+void *printList(Lnode *head){
 	if(head->next == NULL)
 		return;
 	Lnode *p = head->next;
@@ -30,7 +30,7 @@ void printList(Lnode *head){
 }
 //输出线性表
 
-elemtype getKey(Lnode *head,int i){
+elemtype *getKey(Lnode *head,int i){
 	int counter;
 	Lnode *p = head;
 	if(p == NULL)          //超出范围 
@@ -44,7 +44,7 @@ elemtype getKey(Lnode *head,int i){
 }
 //取表中的第i个元素的键值
 
-void delPos(Lnode *head,int pos){
+void *delPos(Lnode *head,int pos){
 	int i = 1;
 	Lnode *q,*p = head->next;
 	if(p == NULL)          //空表，跳出 
@@ -62,7 +62,7 @@ void delPos(Lnode *head,int pos){
 }
 //从表中删除指定位置的元素
 
-void delKey(Lnode *head,elemtype key){
+void *delKey(Lnode *head,elemtype key){
 	Lnode *q,*p = head->next;
 	if(p == NULL)          //空表，跳出 
 		return;
@@ -78,7 +78,7 @@ void delKey(Lnode *head,elemtype key){
 }
 //从表中删除指定键值的元素
 
-void addHead(Lnode *head,elemtype key){
+void *addHead(Lnode *head,elemtype key){
 	Lnode *p = (Lnode *)malloc(sizeof(Lnode));
 	p->data = key;
 	p->next = head->next;
@@ -86,7 +86,7 @@ void addHead(Lnode *head,elemtype key){
 }
 //向表的头部添加键值为key的元素
 
-void addTail(Lnode *head,elemtype key){
+void *addTail(Lnode *head,elemtype key){
 	Lnode *tail=head->next,*p = (Lnode *)malloc(sizeof(Lnode));
 	p->data = key;
 	p->next = NULL;
@@ -98,7 +98,7 @@ void addTail(Lnode *head,elemtype key){
 }
 //向表的尾部添加键值为key的元素
 
-void addPos(Lnode *head,elemtype key,int pos){
+void *addPos(Lnode *head,elemtype key,int pos){
 	int i = 0;
 	Lnode *q,*r,*p = (Lnode *)malloc(sizeof(Lnode));
 	p->data = key;
@@ -115,7 +115,7 @@ void addPos(Lnode *head,elemtype key,int pos){
 }
 //向表中指定的位置pos处添加键值为key的元素
 
-int isExist(Lnode *head,elemtype key){
+int *isExist(Lnode *head,elemtype key){
 	Lnode *p;
 	p->next = head->next;
 	while(p->data != key){
@@ -146,7 +146,102 @@ Lnode *copy(Lnode *L){
 
 
 
-
+//#include <stdio.h>
+//#include <stdlib.h>
+////单链表实现多项式求和（有bug） 
+//typedef struct node{
+//	int ext;       //指数 
+//	float coef;    //系数 
+//	struct node *next;
+//}polynode;
+//
+//
+//void *printList(polynode *head){
+//	if(head->next == NULL)
+//		return;
+//	polynode *p = head->next;
+//	while(p){
+//		printf("%+.1f",p->coef);
+//		printf("x^%d",p->ext);
+//		p = p->next;
+//	}
+//}
+//
+//
+//polynode *putIn(polynode *head){
+//	polynode *p;
+//	int i;
+//	printf("Enter the number of terms in the polynomial:");
+//	scanf("%d",&i);          //项数 
+//	int j;
+//	for(j=0;j<i;j++){
+//		int e;
+//		float c;
+//		printf("Enter exponent and coefficient:");
+//		scanf("%d%f",&e,&c);
+//		polynode *p = (polynode *)malloc(sizeof(polynode));
+//		p->coef = c;
+//		p->ext = e;
+//		p->next = head->next;
+//		head->next = p;
+//	}
+//	return head;
+//}
+//
+//polynode *sum(polynode *A,polynode *B){
+//	polynode *p,*head,*a,*b;
+//	a->next = A->next;
+//	b->next = B->next;
+//	while(a->next != NULL||b->next != NULL){
+//		if(a->ext == b->ext){
+//			polynode *p = (polynode *)malloc(sizeof(polynode));
+//			p->ext = a->ext;
+//			p->coef = a->coef + b->coef;
+//			p->next = head->next;
+//			head->next = p;
+//			a = a->next;
+//			b = b->next;
+//		}
+//		else if(a->ext > b->ext){
+//			polynode *p = (polynode *)malloc(sizeof(polynode));
+//			p->ext = a->ext;
+//			p->coef = a->coef;
+//			a = a->next; 
+//		}
+//		else if(a->ext < b->ext){
+//			polynode *p = (polynode *)malloc(sizeof(polynode));
+//			p->ext = b->ext;
+//			p->coef = b->coef;
+//			b = b->next;
+//		}
+//		else if(a->next == NULL){
+//			polynode *p = (polynode *)malloc(sizeof(polynode));
+//			p->ext = b->ext;
+//			p->coef = b->coef;
+//			b = b->next;
+//		}
+//		else if(b->next ==NULL){
+//			polynode *p = (polynode *)malloc(sizeof(polynode));
+//			p->ext = a->ext;
+//			p->coef = a->coef;
+//			a = a->next; 
+//		}
+//	}
+//	return head;
+//}
+//
+//
+//int main() {
+//	polynode *A = (polynode *)malloc(sizeof(polynode));
+//	A->next = NULL;
+//	A = putIn(A);
+//	polynode *B = (polynode *)malloc(sizeof(polynode));
+//	B->next = NULL;
+//	B = putIn(B);
+//	printList(B);
+//	printList(sum(A,B));
+//	return 0;
+//}
 
 
 
