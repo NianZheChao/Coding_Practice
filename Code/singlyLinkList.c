@@ -231,21 +231,21 @@ Lnode *copy(Lnode *L){
 //}
 //
 //
-//int main() {
-//	polynode *A = (polynode *)malloc(sizeof(polynode));
-//	A->next = NULL;
-//	A = putIn(A);
-//	polynode *B = (polynode *)malloc(sizeof(polynode));
-//	B->next = NULL;
-//	B = putIn(B);
-//	printList(B);
-//	printList(sum(A,B));
-//	return 0;
-//}
-
-
-
-
 int main() {
+	polynode *A = (polynode *)malloc(sizeof(polynode));
+	A->next = NULL;
+	A = putIn(A);
+	polynode *B = (polynode *)malloc(sizeof(polynode));
+	B->next = NULL;
+	B = putIn(B);
+	printList(B);
+	printList(sum(A,B));
 	return 0;
 }
+
+
+
+
+//int main() {
+//	return 0;
+//}
