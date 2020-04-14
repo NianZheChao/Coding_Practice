@@ -95,8 +95,47 @@ int high(btnode *T){
 	}
 }
 
+int precede(char optr1,char optr2){
+	switch(optr1){
+		case'+':case'-':
+			if(optr2=='+'||optr2=='-'){
+				return 0;
+			}
+			else{
+				return -1;
+			}
+		case'*':case'/':
+			if(optr2=='*'||optr2=='/'){
+				return 0;
+			}
+			else{
+				return 1;
+			}
+	}
+}
+
+
 void infixExpression(btnode *T){
-	
+	int bracket;
+	if(T){
+	if(T->lchild!=NULL){
+		bracket = precede(T->ch,T->lchild->ch);
+		if(bracket==1)
+			printf("(");
+		infixExpression(T->lchild);
+		if(bracket==1)
+			printf(")");
+	}
+	printf("%c",T->ch);
+	if(T->rchild!=NULL){
+		bracket = precede(T->ch,T->rchild->ch);
+		if(bracket==1)
+			printf("(");
+		infixExpression(T->rchild);
+		if(bracket==1)
+			printf(")");
+	}
+}
 }
 
 
@@ -125,5 +164,7 @@ int main(){
 	printf("\n该二叉树的深度为：");
 	H=high(bt);
 	printf("%d",H);
+	printf("\n该二叉表达式树带括号的输出为：");
+	infixExpression(bt);
 	return 0;
 }
