@@ -58,19 +58,8 @@ void postorder(btnode *T){  //后序遍历
 	}
 }
 
-int countLeaf(btnode *T){
-	static int y; 
-//	if(T){
-//		countLeaf(T->lchild);
-//		countLeaf(T->rchild);
-//		if(T->lchild==NULL&&T->rchild==NULL)
-//			y++;
-
-//		y = !((T->lchild?1:0)|(T->rchild?1:0));
-//		return y+countLeaf(T->lchild)+countLeaf(T->rchild);
-//	}
-//	return 0;
-
+int countLeaf(btnode *T){  //求二叉树的叶子数 
+	static int y;
 	if(T==NULL)
 		return y;
 	if(T->lchild==NULL&&T->rchild==NULL)
@@ -80,7 +69,7 @@ int countLeaf(btnode *T){
 	return y;
 }
 
-int high(btnode *T){
+int high(btnode *T){  //求二叉树的深度 
 	int i=0;
 	int m=0;
 	int n=0;
@@ -95,27 +84,29 @@ int high(btnode *T){
 	}
 }
 
-int precede(char optr1,char optr2){
+int precede(char optr1,char optr2){ //表达式优先级 
 	switch(optr1){
-		case'+':case'-':
+		case'+':case'-':{ 
 			if(optr2=='+'||optr2=='-'){
 				return 0;
 			}
 			else{
 				return -1;
 			}
-		case'*':case'/':
+		}
+		case'*':case'/':{ 
 			if(optr2=='*'||optr2=='/'){
 				return 0;
 			}
 			else{
 				return 1;
 			}
+		}
 	}
 }
 
 
-void infixExpression(btnode *T){
+void infixExpression(btnode *T){  //输出带括号的中缀表达式 
 	int bracket;
 	if(T){
 	if(T->lchild!=NULL){
@@ -138,33 +129,30 @@ void infixExpression(btnode *T){
 }
 }
 
+void nonRecInorder(btnode *T){
+	
+}
 
 int main(){
-//	char *str = "abcd";
-//	char str[7]="abcd";
-//	printf("%s",str);
-//	int i;
-//	for(i=0;str[i]!='\0';i++)
-//	*str(i) = *str(i+1);
-//	*str(i) =*str(i+1);
-//	printf("%s",str);
 	btnode *bt=(btnode *)malloc(sizeof(btnode));
 	printf("输入先序遍历序列，创建二叉树：");
 	bt = creatTree(*bt);
-	printf("\n该二叉树的先序遍历序列为：");
-	preorder(bt);
+//	printf("\n该二叉树的先序遍历序列为：");
+//	preorder(bt);
 	printf("\n该二叉树的中序遍历序列为：");
 	inorder(bt);
-	printf("\n该二叉树的后续遍历序列为：");
-	postorder(bt);
-	int L,H;
-	printf("\n该二叉树的叶子数为：");
-	L=countLeaf(bt);
-	printf("%d",L);
-	printf("\n该二叉树的深度为：");
-	H=high(bt);
-	printf("%d",H);
+//	printf("\n该二叉树的后续遍历序列为：");
+//	postorder(bt);
+//	int L,H;
+//	printf("\n该二叉树的叶子数为：");
+//	L=countLeaf(bt);
+//	printf("%d",L);
+//	printf("\n该二叉树的深度为：");
+//	H=high(bt);
+//	printf("%d",H);
 	printf("\n该二叉表达式树带括号的输出为：");
 	infixExpression(bt);
+	
+	
 	return 0;
 }
