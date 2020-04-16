@@ -129,8 +129,108 @@ void infixExpression(btnode *T){  //输出带括号的中缀表达式
 }
 }
 
-void nonRecInorder(btnode *T){
-	
+#define MAXSIZE 1024
+typedef struct{
+	elemtype *bt[MAXSIZE];
+	int top;
+}STACK;
+
+int isEmpty(STACK *stack){
+	if(stack->top==-1)
+	return 1;
+	return 0;
+}
+
+void push(STACK *stack,elemtype *c){
+	if(stack->top<MAXSIZE-1)
+		stack->bt[++(stack->top)]=c;
+}
+
+elemtype *pop(STACK *stack){
+	elemtype *c = NULL;
+	if(!isEmpty(stack))
+		c=stack->bt[(stack->top)--];
+	return c;
+}
+
+STACK *initstack(){
+	STACK *stack=(STACK *)malloc(sizeof(STACK));
+	stack->top=-1;
+	return stack;
+}
+
+int nonRecCountLeaf(btnode *T){     //非递归算法求叶子数 
+	STACK *s = initstack();
+	if(T==NULL)
+		return 0;
+	if(!T->lchild&&!T->rchild)
+		return 1;
+	int count = 0; 
+	push(s,T);
+	T=T->lchild;
+	while(1){
+		while(T){
+			push(s,T);
+			T=T->lchild;
+		}
+		if(!isEmpty(s)){
+			T=pop(s);
+			if(!T->lchild&&!T->rchild)
+				count++;
+			T=T->rchild;
+		}
+		else{
+			free(s);
+			return count;
+		}
+	}
+}
+
+btnode *copyBtree(btnode *T){    //复制二叉树 
+	btnode *t;
+	if(T==NULL)
+		return NULL;
+	else{
+		t = (btnode *)malloc(sizeof(btnode));
+		t->ch = T->ch;
+		t->lchild = copyBtree(T->lchild);
+		t->rchild = copyBtree(T->rchild); 
+		return t;
+	}
+}
+
+void nonRecInorder(btnode *T){  //非递归算法中序输出 
+	STACK *s = initstack();
+	if(T==NULL)
+		return 0;
+	push(s,T);
+	T=T->lchild;
+	while(1){
+		while(T){
+			push(s,T);
+			T=T->lchild;
+		}
+		if(!isEmpty(s)){
+			T=pop(s);
+			printf("%c",T->ch);
+			T=T->rchild;
+		}
+		else{
+			free(s);
+			return;
+		}
+	}
+}
+
+int countSingleC(btnode *T){
+	static int y;
+	if(T==NULL)
+		return y;
+	if((T->lchild==NULL&&!T->rchild==NULL)||(!T->lchild==NULL&&T->rchild==NULL))
+		y++;
+	countSingleC(T->lchild);
+	countSingleC(T->rchild);
+	return y;
 }
 
 int main(){
@@ -139,8 +239,8 @@ int main(){
 	bt = creatTree(*bt);
 //	printf("\n该二叉树的先序遍历序列为：");
 //	preorder(bt);
-	printf("\n该二叉树的中序遍历序列为：");
-	inorder(bt);
+//	printf("\n该二叉树的中序遍历序列为：");
+//	inorder(bt);
 //	printf("\n该二叉树的后续遍历序列为：");
 //	postorder(bt);
 //	int L,H;
@@ -150,9 +250,21 @@ int main(){
 //	printf("\n该二叉树的深度为：");
 //	H=high(bt);
 //	printf("%d",H);
-	printf("\n该二叉表达式树带括号的输出为：");
-	infixExpression(bt);
-	
-	
+//	printf("\n该二叉表达式树带括号的输出为：");
+//	infixExpression(bt);
+	printf("\n非递归方法输出该二叉树中序序列：");
+	nonRecInorder(bt);
+	btnode *t=(btnode *)malloc(sizeof(btnode));
+	t = copyBtree(bt);
+	printf("\n复制后二叉树的中序序列输出为：");
+	inorder(t);
+	printf("\n非递归方法求得二叉树的叶子数为：");
+	int L;
+	L =  nonRecCountLeaf(bt);
+	printf("%d",L);
+	int C;
+	C = countSingleC(bt);
+	printf("\n二叉树中度为 1 的结点数为："); 
+	printf("%d",C);
 	return 0;
 }
