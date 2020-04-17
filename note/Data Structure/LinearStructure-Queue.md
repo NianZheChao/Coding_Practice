@@ -18,11 +18,31 @@ struct QNode{
     int front;
 };
 typedef struct QNode *Queue;
+
+//初始：QNode->front = QNode->rear = -1;
+//判空：QNode->front == QNode->rear;
+//入队：QNode->Data[++(QNode->rear)] = x;
+//出队：x = sq->Data[++(QNode->front)];
 ```
 
 ### 顺环队列
 
-略
+把队列设想成环形，若rear+1==M，则令rear = 0;
+
+可以使用模运算实现：
+
+```C
+rear = (rear+1)%M;
+QNode[rear]=x;     //入队
+
+front = (front+1)%M;
+x = QNode[front];  //出队
+
+front == rear;  //队空
+(rear+1)%M ==front;  //队满
+```
+
+该方法可解决队列假上溢问题。
 
 ### 队列的链式存储实现
 
