@@ -62,6 +62,8 @@ void RePrintLastElement(LNode *head){  //利用栈反向输出单链表
 	}
 }
 
+
+
 int main(){
 	return 0;
 } 

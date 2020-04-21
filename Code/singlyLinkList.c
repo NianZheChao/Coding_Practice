@@ -145,10 +145,38 @@ Lnode *copy(Lnode *L){
 //将单链表复制到另一个单链表中
 
 
+Lnode *defference(Lnode *A,Lnode *B){   //两个单链表的差集 
+	Lnode *p,*q;
+	p->next = A->next;
+	q->next = B->next;
+	Lnode *R = (Lnode *)malloc(sizeof(Lnode));
+	while(1){
+		if(p->data < q->data||!q){
+			Lnode *L =(Lnode *)malloc(sizeof(Lnode));
+			L->next = R->next;
+			R->next = L;
+			L->data = p->data;
+			p = p->next;
+		}
+		if(p->data > q->data){
+			q = q->next;
+		}
+		if(p->data == q->data){
+			p = p->next;
+			q = q->next;
+		}
+		if(!p)
+			break;
+	}
+	return R;
+}
+
+
+
+//单链表实现多项式求和（有bug）
 
 //#include <stdio.h>
 //#include <stdlib.h>
-////单链表实现多项式求和（有bug） 
 //typedef struct node{
 //	int ext;       //指数 
 //	float coef;    //系数 
@@ -229,8 +257,9 @@ Lnode *copy(Lnode *L){
 //	}
 //	return head;
 //}
-//
-//
+
+
+
 int main() {
 	polynode *A = (polynode *)malloc(sizeof(polynode));
 	A->next = NULL;
