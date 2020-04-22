@@ -261,17 +261,16 @@ Lnode *defference(Lnode *A,Lnode *B){   //两个单链表的差集
 
 
 int main() {
-	polynode *A = (polynode *)malloc(sizeof(polynode));
-	A->next = NULL;
-	A = putIn(A);
-	polynode *B = (polynode *)malloc(sizeof(polynode));
-	B->next = NULL;
-	B = putIn(B);
-	printList(B);
-	printList(sum(A,B));
+//	polynode *A = (polynode *)malloc(sizeof(polynode));
+//	A->next = NULL;
+//	A = putIn(A);
+//	polynode *B = (polynode *)malloc(sizeof(polynode));
+//	B->next = NULL;
+//	B = putIn(B);
+//	printList(B);
+//	printList(sum(A,B));
 	return 0;
 }
-
 
 
 
