@@ -28,7 +28,7 @@ void *printList(Lnode *head){
 		p = p->next;
 	}
 }
-//输出线性表
+//输出线性表 
 
 elemtype *getKey(Lnode *head,int i){
 	int counter;
@@ -172,6 +172,39 @@ Lnode *defference(Lnode *A,Lnode *B){   //两个单链表的差集
 }
 
 
+//有bug 
+int exist(Lnode *head,int i){ //判断表内是否有其他该元素 
+	int a = 0;
+	Lnode *p;
+	p->next = head->next;
+	while(1){
+		if(p->data==i){
+			a = a + 1;
+			p = p->next;
+		}
+		if(p->data!=i)
+			p = p->next;
+		if(!p)
+			break;
+	}
+	if(a==1)
+		return 1;
+	else
+		return 0;
+}
+
+int singleElem(Lnode *head){     //判断表中只出现一次的结点数 
+	int S = 0;
+	Lnode *p;
+	p->next = head->next;
+	while(1){
+		S = S + exist(head,p->data);
+		p = p->next;
+		if(!p)
+			break;
+	}
+	return S;
+}
 
 //单链表实现多项式求和（有bug）
 
@@ -260,7 +293,7 @@ Lnode *defference(Lnode *A,Lnode *B){   //两个单链表的差集
 
 
 
-int main() {
+//int main() {
 //	polynode *A = (polynode *)malloc(sizeof(polynode));
 //	A->next = NULL;
 //	A = putIn(A);
@@ -269,11 +302,7 @@ int main() {
 //	B = putIn(B);
 //	printList(B);
 //	printList(sum(A,B));
-	return 0;
-}
-
-
-
-//int main() {
 //	return 0;
 //}
+
+
