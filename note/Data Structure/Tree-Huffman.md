@@ -45,3 +45,5 @@ hufmtree forest[m+1];
 
 ## 哈夫曼编码
 
+略
+

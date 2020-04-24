@@ -222,6 +222,36 @@ void nonRecInorder(btnode *T){  //非递归算法中序输出
 	}
 }
 
+void Postorder(btnode* t){
+    btnode* Seqstack[MAXSIZE];
+    int top = -1;
+    int flag = 1;
+    btnode* p;
+    if(t != NULL){
+        do{
+            while(t != NULL){                    // 循环，将所有最左结点压栈
+                top ++;
+                Seqstack[top] = t;
+                t = t->lchild;
+            }
+            flag = 1;                           // 辅助变量flag为1表示当前结点的左孩子为空或者已被访问
+            p = NULL;                           // 指针变量p指向当前结点的前驱结点
+            while(top > -1&& falg == 1){
+                t = Seqstack[top];              // 获取栈顶元素，而并没有出栈
+                if(t->rchild == p){              // 如果当前结点右孩子为空，或者已经被访问过，则访问当前结点
+                    top --;                     // 当前结点出栈
+                    printf("%d ", p->data);
+                    p = t;                      // 指针变量指向当前结点
+                }
+                else{                            // 如果当前结点右孩子不为空，则先去处理右孩子
+                    t = t->rchild;              // 处理右孩子
+                    flag = 0;                   // *t的左孩子未被访问，flag置为0
+                }
+            }
+        }while(top > -1)
+    }
+}
+
 int countSingleC(btnode *T){
 	static int y;
 	if(T==NULL)
