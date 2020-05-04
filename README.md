@@ -1,6 +1,6 @@
-# Data Structure Practice
+# CS Note
 
-My own data structure practice set.
+My own computer science note set.
 
 #include<leetcode.com>
 
