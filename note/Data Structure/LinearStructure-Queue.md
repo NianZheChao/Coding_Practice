@@ -49,16 +49,19 @@ front == rear;  //队空
 队列的链式存储结构也可以用一个单链表实现。插入和删除操作分别在链表的两头进行。
 
 ```c
-struct Node{
-    ElementType Data;
-    struct Node *Next;
-};
-struct QNode{
-    struct Node *rear;            //指向队尾结点
-    struct Node *front;           //指向队头结点
-};
-typedef struct QNode *Queue;
-Queue PtrQ;
+typedef int elemtype;
+
+typedef struct node{      //结点
+    elemtype data;
+    struct node *next;
+}QNODE;
+
+typedef struct{           //队列
+    QNODE *front;
+    QNODE *rear;
+}LQUEUE;
+
+LQUEUE *q;            //封装了队头指针和队尾指针
 ```
 
 不带头结点的链式队列出队操作的一个实例
