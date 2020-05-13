@@ -166,8 +166,6 @@ struct Lnode L;
 List PtrL;
 ```
 
-![1567693824719](/home/omg405/.config/Typora/typora-user-images/1567693824719.png)
-
 ### 主要操作的实现
 
 1. 求表长
