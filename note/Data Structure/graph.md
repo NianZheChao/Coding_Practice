@@ -175,3 +175,144 @@ EDGE edgeset[MaxEdgeNum];
 
 ### 深度优先遍历(Depth First Search)
 
+#### 算法
+
+```c
+//递归算法DFS(graph *ga,int vi)
+//假设图ga有n个顶点，用邻接矩阵存储ga，初始顶点vi
+for k in (1~n)
+    visited[i] = 0;
+DFS(ga,vi){
+    visit(vi); //访问顶点vi
+    visited[vi] = 1;
+    for k in (1~n){
+        if(fa->edges[vi][k]==1&&!visited[k])
+            DFS(ga,k);
+    }
+}
+```
+
+```C
+//假设图ga有n个结点，用邻接表存储ga
+for k in(1~n)
+    visited[i] = 0;
+DFS(ga,vi){
+    visit(vi);//访问顶点vi
+    visited[vi] = 1;
+    p = (ga->vexes[vi]).head;
+    while(p){           //访问vi的边表的所有结点
+        if(!visited[p->vertex])
+            DFS(ga,p->vertex);
+        p = p->next;
+    }
+}
+```
+
+### 广度优先遍历(Breadth First Search)
+
+#### 概念
+
+BFS算法：类似于树的层次遍历
+
+- 假设初始时图中所有顶点都没被访问过
+  - 从图中某一顶点vi出发，访问vi
+  - 访问vi的全部邻接点w1,w2,...,wt
+  - 再从这些被访问的顶点出发，逐次访问它们的邻接点（已被访问的顶点除外）
+  - 以此类推，直到所有顶点都被访问为止
+- 需要辅助数组visited[1...n]，记录各结点被访问的状态
+
+### 图的连通性
+
+- 连通图，从图中任一顶点出发，便可遍历图
+- 非连通图，从任一顶点出发，不能访问所有顶点，只能访问一个连通分量
+- 求图的连通分量？
+  - 从图中任一顶点vi出发遍历图
+  - 遍历中被访问的顶点，都在与vi的连通分量上
+  - 一次遍历结束，若还有未被访问过的顶点，则从其中任一顶点出发，重新遍历图，可求得另一个连通分量
+- 若DFS（BFS）算法仅被调用一次，则图是连通图
+- 若被调用多次，则图是非连通图，得到多个连通分量
+
+算法：
+
+```C
+step1:for(i:1~n)
+    	visited[i] = FALSE;
+step2:for(i:1~n)
+    	if(!visited[i])
+            DFS(ga,i);
+```
+
+## 图的拓扑排序
+
+### 概念
+
+#### 有向无环图
+
+**无环图**(Directed Acycline Graph)：无环（回路）的有向图叫做有向无环图。
+
+**顶点表示活动的网** Activity On Vertex Network,AOV Network：
+
+- 顶点表示活动，弧表示活动间的先后关系
+- AOV网中不能有回路，回路意味着某项活动以自己为先决条件，形成死锁
+
+#### 拓扑排序
+
+- 把AOV网中各顶点按其活动的先后关系，排列成一个线性序列的过程
+- 一个AOV网的拓扑序列不是唯一的
+
+#### 图的拓扑排序
+
+- AOV网用邻接表存储
+- 在邻接表的表头结点增加存放顶点入度的域
+- 栈或队列存放入度为0的顶点
+
+算法思路：
+
+```C
+step1:初始化栈，令count = 0
+step2:创建ga的邻接表，初始化每个顶点的入度为0
+step3:将当前可开始的活动入栈
+	foreach k in 1~n
+		if(ga->vexex[k].indegree==0)
+            push(stack,k)
+step4:while(!empty(stack))
+    	vi=pop(stack)
+    	visit(vi),count++
+    	将后续活动的入度-1，并记录新的可开始的活动
+    		p = ga->vexex[vi].head
+    		while(p)
+                ga->vexex[p->data].indegree--
+                if(ga->vexex[p->data].indegree == 0)
+                    push(stack,p->data)
+                p = p->next
+step5:如仍有活动未进行，return FALSE,否则return true
+    	if(count<n)
+            return FALSE
+```
+
+## 最小生成树
+
+### 概念
+
+#### 生成树
+
+**连通图**G的极小连通子图，称为图的生成树；包含图中所有顶点；无回路；
+
+生成树包含n个顶点，只有n-1条边，任意去掉一条边，图将变成非连通图，添加一条边，图中将出现回路；含n个顶点n-1条边的图不一定是生成树
+
+对连通图G=(V,E)，从G中任一顶点出发遍历，得到一个边集T(G)，T(G)与V构成图G的极小连通子图，即图G的一颗生成树。
+
+由DFS得到**深度优先生成树**，由BFS得到**广度优先生成树**
+
+对于**非连通图**，每个连通分量的顶点集和遍历时的边构成一棵生成树；全部连通分量的生成树构成生成森林
+
+#### 最小生成树
+
+图的生成树不是唯一的，从不同的顶点出发，可得到不同的生成树。
+
+**最小生成树(Minimum Spanning Tree)**：
+
+连通网络G=(V,E)的各边带权，因此其生成树各边带权。生成树的权即为生成树各边的权值之和，最小生成树即为权值最小的生成树。
+
+### PRIM算法
+
