@@ -69,6 +69,84 @@ NODE M[T+1];
 - 显然有：
   - cpot[1] = 1;
   - cpot[col] = cpot[col - 1] + num[col - 1];           (2<=col<=M[0].j)
+  
+
+**代码实现**
+
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#define MAXSIZE 1250
+ 
+#define    OK      1
+#define    ERROR   0
+#define    TRUE    1
+#define    FLASE   0
+ 
+typedef    int     ElemType;
+ 
+typedef struct{
+    int   i, j;       //该非零元的行下标和列下标
+    ElemType e;       //非零元对应的值
+}Triple;
+ 
+typedef struct{
+    Triple   data[MAXSIZE];       //非零元三元组表
+    int      mu, nu, tu;            //矩阵的行数，列数，非零元个数
+}TSMatrix;
+ 
+void FastTransposeSMatrix(TSMatrix M, TSMatrix &T)              //快速转置
+{                                                      //采用三元组顺序表存储表示，求稀疏矩阵M的转置矩阵T
+    T.mu = M.nu;
+    T.nu = M.mu;
+    T.tu = M.tu;
+    if(T.tu)
+    {
+        int col;
+        int num[100], cpot[100];
+        for (col = 0; col < M.nu; col++)
+            num[col] = 0;                 //num数组的初始化
+        for (int t = 0; t < M.tu; t++)
+            ++num[M.data[t].j];         //求M中每一列含有的非零元个数
+        cpot[0] = 0;
+        for (col = 1; col < M.nu; col++)
+            cpot[col] = cpot[col - 1] + num[col - 1];         //求cpot向量
+        int q;
+        for (int p = 0; p < M.tu; p++)
+        {
+            col = M.data[p].j;
+            q = cpot[col];
+            T.data[q].i = M.data[p].j;
+            T.data[q].j = M.data[p].i;
+            T.data[q].e = M.data[p].e;
+            ++cpot[col];
+        }//for
+    }//if
+    return;
+}//FastTransposeSMatrix
+ 
+int main()
+{
+    TSMatrix M;
+    TSMatrix T;
+    scanf("%d %d", &M.mu, &M.nu);
+    int x,y,z;
+    M.tu=0;
+    for (int i = 0; ; i++)
+    {
+        scanf("%d%d%d", &x, &y, &z);
+        if(x==0&&y==0&&z==0)break;
+        M.data[i].i=x;M.data[i].j=y;M.data[i].e=z;
+        M.tu++;
+    }
+ 
+    FastTransposeSMatrix(M, T);
+ 
+    for (int t = 0; t < T.tu; t++)
+        printf("%d %d %d\n", T.data[t].i, T.data[t].j, T.data[t].e);
+    return 0;
+}
+```
 
 #### 十字链表
 
