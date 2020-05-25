@@ -187,7 +187,7 @@ FILE是一种结构类型
 代码示例：
 
 ```C
-FILE* fp = fopen("file","r");     
+FILE* fp = fopen("file","r");
 //fp是一个指向FILE的指针
 //FILE其实是一种结构，它代表我们所打开的文件中的信息
 //fopen的参数为：1.文件名 2.r表示read
@@ -237,7 +237,7 @@ int main(void)
 
 fopen的参数说明：
 
-文件指针名=fopen（文件名,使用文件方式）;
+`文件指针名=fopen（文件名,使用文件方式）;`
 
 - r：打开只读
 - r+：打开读写，从文件头开始
@@ -248,6 +248,59 @@ fopen的参数说明：
 
 fscanf的参数说明：
 
-`int fscanf(FILE * stream, const char * format, [argument...]); `
+```C int fscanf(FILE * stream, const char * format, [argument...]); 
+int fputs(const char *str, FILE *stream)
+```
 
-一般的使用方式示例：`fscanf(fp,"%s%d%lf",a,&b,&c)`
+一般的使用方式示例：
+
+```c
+fscanf(fp,"%s%d%lf",a,&b,&c);
+```
+
+fputs的参数说明：
+
+```c
+int fputs(const char *str, FILE *stream)
+```
+
+fputs示例：
+
+```c
+int main ()
+{
+   FILE *fp;
+
+   fp = fopen("file.txt", "w+");
+
+   fputs("这是 C 语言。", fp);
+   fputs("这是一种系统程序设计语言。", fp);
+
+   fclose(fp);
+   
+   return(0);
+}
+```
+
+fprintf的参数说明：
+
+```c
+int fprintf(FILE *stream, const char *format, ...)
+```
+
+fprintf示例：
+
+```c
+void initFile(){
+    int i;
+    int a = 0;
+    FILE* fp = fopen("T.txt","w+");
+    for(i=0;i<100;i++){
+        fprintf(fp,"%d\n",a);
+        printf("%d",a);
+        a++;
+    }
+    fclose(fp);
+}
+```
+
