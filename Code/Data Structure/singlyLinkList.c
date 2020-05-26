@@ -19,7 +19,7 @@ Lnode *creatHead(){
 	return head;
 }//创建单链表头结点
 
-void *printList(Lnode *head){
+void printList(Lnode *head){
 	if(head->next == NULL)
 		return;
 	Lnode *p = head->next;
