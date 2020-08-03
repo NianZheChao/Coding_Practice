@@ -236,11 +236,11 @@ void Postorder(btnode* t){
             }
             flag = 1;                           // 辅助变量flag为1表示当前结点的左孩子为空或者已被访问
             p = NULL;                           // 指针变量p指向当前结点的前驱结点
-            while(top > -1&& falg == 1){
+            while(top > -1&& flag == 1){
                 t = Seqstack[top];              // 获取栈顶元素，而并没有出栈
                 if(t->rchild == p){              // 如果当前结点右孩子为空，或者已经被访问过，则访问当前结点
                     top --;                     // 当前结点出栈
-                    printf("%d ", p->data);
+                    printf("%d ", p->ch);
                     p = t;                      // 指针变量指向当前结点
                 }
                 else{                            // 如果当前结点右孩子不为空，则先去处理右孩子
