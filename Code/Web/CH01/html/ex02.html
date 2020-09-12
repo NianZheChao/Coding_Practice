@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>实验二</title>
+</head>
+
+<body>
+    <h1>列表标签实验</h1>
+    <h4>Disc 项目符号列表</h4>
+    <ul type="disc">
+        <li>计算机科学与技术专业</li>
+        <li>软件工程专业</li>
+        <li type="circle">信息管理与信息系统专业</li>
+    </ul>
+    <h4>Circle 项目符号列表：</h4>
+    <ul type="circle">
+        <li>计算机科学与技术专业</li>
+        <li type="square">软件工程专业</li>
+        <li>信息管理与信息系统专业</li>
+    </ul>
+    <h4>Square 项目符号列表：</h4>
+    <ul type="square">
+        <li>计算机科学与技术专业</li>
+        <li>软件工程专业</li>
+        <li>信息管理与信息系统专业</li>
+    </ul>
+
+    <h1>无序列表的嵌套使用</h1>
+    <h4>清华大学出版社图书分类</h4>
+    <ol type="1">
+        <li>
+            <h4>计算机与电子信息</h4>
+            <ol type="A">
+                <li>数据库</li>
+                <li>电子信息</li>
+                <li>计算机组成与原理</li>
+                <li>
+                    计算机基础
+                    <ul type="disc">
+                        <li>计算机文化基础</li>
+                        <li>公共基础</li>
+                        <li>软件技术基础</li>
+                        <li>计算机导论</li>
+                        <li>计算思维</li>
+                    </ul>
+                </li>
+            </ol>
+        </li>
+        <li>
+            <h4>理工</h4>
+        </li>
+        <li>
+            <h4>经管与人文</h4>
+        </li>
+    </ol>
+    <h1>无样式二级菜单练习</h1>
+    <ul>
+        <li>首页</li>
+        <li>
+            公司简介
+            <ul>
+                <li>公司理念</li>
+                <li>核心团队</li>
+                <li>组织机构</li>
+            </ul>
+        </li>
+        <li>
+            新闻公告
+            <ul>
+                <li>版权声明</li>
+                <li>在线留言</li>
+                <li>技术支持</li>
+            </ul>
+        </li>
+        <li>版权声明</li>
+        <li>
+            联系我们
+            <ul>
+                <li>版权说明</li>
+                <li>在线留言</li>
+                <li>联系方式</li>
+            </ul>
+        </li>
+        <li>关于我们</li>
+    </ul>
+
+    <h1>图片标签与超链接练习</h1>
+    <h4><span style="color: red">超级链接</span>练习</h4>
+    <ol>
+        <li><a name="first">文字链接</a></li>
+
+        <a href="https://www.cqut.edu.cn/">此处是文字链接，跳转到外部链接；学校的主页</a>
+        <li>图片链接</li>
+        <a href="https://www.kaola.com/">
+            <img src="../img/Koala.jpg" width="720" height="480" alt="Koala" />
+        </a>
+        <li>锚点链接一：跳到底部一个标签坐标</li>
+        <a href="#bottom">跳到页面底部</a>
+        <li>锚点链接二：跳到第一个标签坐标</li>
+        <a href="#first">跳到第一个标签</a>
+    </ol>
+
+    <h1>图像热点链接练习</h1>
+    <p>点击图片左上角r100的圆形区域即可跳转至baidu</p>
+    <img src="../img/Koala.jpg" usemap="#kaola" width="720" height="480" alt="Koala" />
+    <map name="kaola">
+        <area shape="circle" coords="100,100,100" href="https://www.baidu.com" />
+    </map>
+
+    <h1>表单form练习</h1>
+    <h4>普通注册页面</h4>
+    <h5>会员注册</h5>
+
+    <br>
+    账号：<input type="text">
+    <br></br>
+    密码：<input type="password">
+    <br></br>
+    性别：<input type="radio" name="sex" value="male" checked>男<input type="radio" name="sex" value="female">女
+    <br></br>
+    爱好：<input name="hobby" type="checkbox" value="music">音乐<input name="hobby" type="checkbox" value="internet">上网<input
+        name="hobby" type="checkbox" value="football">足球<input name="hobby" type="checkbox" value="chess">下棋
+    <br></br>
+    职业：<select size=3>
+        <option value="worker">工人</option>
+        <option value="engineer">工程师</option>
+        <option value="goverment">政府职员</option>
+    </select>
+    <br></br>
+    收入：<select>
+        <option value="500">0-1000</option>
+        <option value="1500">1000-2000</option>
+        <option value="2500">2000-3000</option>
+        <option value="3500">3000-4000</option>
+    </select>
+    <br></br>
+    电子邮箱：<input type="text">
+    <br></br>
+    主页地址：<input type="text" value="http://">
+    <br></br>
+    个人简历：<textarea placeholder="请输入您的简历..."></textarea>
+    <br></br>
+    <input type="submit" value="提交">
+    <input type="reset" value="重置">
+    </form>
+
+    <a name="bottom"></a>
+</body>
+
+</html>
