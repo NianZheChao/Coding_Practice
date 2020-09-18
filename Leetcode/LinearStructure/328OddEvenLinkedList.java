@@ -27,5 +27,3 @@ class Solution {
         return head;
     }
 }
-
-//解决链表问题最好的办法是在脑中或者纸上把链表画出来
