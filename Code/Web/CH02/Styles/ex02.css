@@ -22,3 +22,16 @@ ul {
   background-color: #0a435e;
   font-size: 3em;
 }
+h3 {
+  color: white;
+  font-size: 0.5em;
+}
+.contentarea > h1 {
+  text-align: center;
+  text-transform: capitalize;
+}
+.contentarea > span {
+  color: red;
+}
+.contentarea > a {
+}
