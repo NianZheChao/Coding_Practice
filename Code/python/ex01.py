@@ -1,5 +1,5 @@
-counter = 1000.00
-Str = 'test'
+ist = ['abcd', 12354, 2.236, 'fuck']
 
-print(counter)
-print(Str)
+print(ist)
+print(ist[0])
+print(ist[2:])
