@@ -1,0 +1,48 @@
+.page-image {
+    transform: translate3d(0px, 0px, 0px);
+    filter: grayscale(100%);
+
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+
+    /*background-size: 100%;
+    background-attachment: fixed;*/
+}
+
+.navbar-brand {
+    color: black;
+    margin-right: 0;
+    padding: 0;
+    padding-right: 5px;
+    text-transform: lowercase !important;
+    font-size: 1.6em;
+    line-height: 1.625rem;
+
+    vertical-align: middle;
+    margin-top: -4px;
+
+    display: inline-block;
+    white-space: nowrap;
+
+    font-weight: 700;
+    font-family: comfortaa, cursive;
+    letter-spacing: .01em;
+}
+
+.page-nav {
+    color: black;
+    cursor: default;
+    text-transform: uppercase;
+    font-size: .8571em;
+    display: inline-block;
+    line-height: 1.625rem;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-family: comfortaa, cursive;
+    letter-spacing: .01em;
+}

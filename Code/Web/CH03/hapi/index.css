@@ -1,0 +1,78 @@
+header {
+    width: 100%;
+    height: 60px;
+    border: 0px, 5px, 1px, 1px solid white;
+    top: 0px;
+    text-align: center;
+}
+
+.navegation {
+    height: 60px;
+    padding-left: 600px;
+    position: relative;
+}
+
+header h2 {
+    margin-left: 150px;
+    float: left;
+    color: #15a29c;
+}
+
+
+header a {
+    color: white;
+    text-decoration: none;
+}
+
+header h2 a:hover {
+    color: #15a29c;
+}
+
+header ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+header ul li {
+    width: 150px;
+    height: 10px;
+    list-style: none;
+    float: left;
+    display: inline;
+    font: 40px;
+    padding-top: 25px;
+    font-size: larger;
+    /* 	border-bottom: 1px solid cadetblue; */
+}
+
+header ul li:hover .nav_div {
+    border: 1px solid greenyellow;
+    border-top-width: 5px;
+    border-top-color: #15a29c;
+    background: #15a29c;
+    color: black;
+}
+
+header ul li a:hover {
+    color: #15a29c;
+    background-color: gray;
+}
+
+header ul li ul {
+    visibility: hidden;
+}
+
+header ul li ul li {
+    height: 10px;
+    font-size: 15px;
+}
+
+header ul li:hover ul {
+    visibility: visible;
+}
+
+header ul li ul li:hover a {
+    /* background: cadetblue; */
+    color: #15a29c;
+
+}
