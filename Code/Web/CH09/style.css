@@ -1,0 +1,50 @@
+.div1 {
+  margin: 0 auto;
+  background: grey;
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  text-align: center;
+  line-height: 200px;
+
+  border-radius: 30px;
+}
+.div2 {
+  margin: 0 auto;
+  background: grey;
+  width: 200px;
+  height: 200px;
+  border: 2px solid;
+  text-align: center;
+  line-height: 200px;
+
+  border-radius: 50%;
+}
+.box-shadow-1 {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  background: grey;
+
+  box-shadow: 3px 3px 3px;
+  transition: transform 0.5s;
+}
+.box-shadow-1:hover {
+  transform: translateY(-10px);
+}
+
+.hvr-fade {
+  width: 100px;
+  height: 100px;
+  margin: 50px auto;
+  background: grey;
+  box-shadow: 3px 3px 3px;
+
+  transition-property: grey, green;
+  transition-duration: 0.3s;
+}
+
+.hvr-fade:hover {
+  background-color: blue;
+  color: red;
+}
