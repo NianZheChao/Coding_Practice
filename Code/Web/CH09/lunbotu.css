@@ -1,0 +1,66 @@
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.my-swiper {
+  position: relative;
+  width: 800px;
+  height: 450px;
+  margin: 100px auto;
+  overflow: hidden;
+}
+
+.swiper-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4000px;
+  height: 100%;
+  overflow: hidden;
+  animation: swiper 10s steps(1, end) infinite;
+  transition: left 1s linear;
+}
+
+.swiper-slide {
+  width: 800px;
+  height: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.swiper-slide a {
+  display: block;
+  height: 100%;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes swiper {
+  0%,
+  100% {
+    left: 0;
+  }
+
+  20% {
+    left: -800px;
+  }
+
+  40% {
+    left: -1600px;
+  }
+
+  60% {
+    left: -2400px;
+  }
+
+  80% {
+    left: -3200px;
+  }
+}
