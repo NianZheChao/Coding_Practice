@@ -1,0 +1,191 @@
+
+
+.text {
+  color: white;
+  text-decoration: none;
+}
+.wrap{
+	max-width:1544px;
+	min-width:920px
+}
+header ul li a{
+	text-decoration: none;
+}
+
+header ul li {
+  width: 150px;
+  height: 15px;
+  font-size: large;
+  list-style: none;
+  float: left;
+  display: inline-block;
+  margin-inline: 20px;
+
+}
+
+
+header nav {
+  margin: 0 auto;
+  text-align: center;
+  width: 99%;
+  height: 50px;
+  position: fixed;
+  background-color: black;
+}
+
+
+.main_top {
+  background-color: black;
+}
+.main_center{
+	background-color: white;
+}
+.msg {
+  width: 60%;
+  display: block;
+  align-self: center;
+  position: relative;
+  margin: 40px auto;
+}
+
+.msg a {
+  display: block;
+  align-self: center;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+.msg1{
+	width: 60%;
+	display: block;
+	align-self: center;
+	position: relative;
+	margin: 40px auto;
+}
+.msg1 a{
+  color: black;
+  display: block;
+  align-self: center;
+  text-align: center;
+  text-decoration: none;
+}
+.txt-box {
+  font-family: "Heebo", sans-serif;
+  font-size: 44pt;
+  font-style: "Thin";
+  font-weight: lighter;
+}
+
+.txt-box2 {
+  font-family: "Catamaran", sans-serif;
+  font-size: 24pt;
+  font-style: normal;
+  line-height: 40px;
+}
+
+.txt-box3 {
+  font-family: "Catamaran", sans-serif;
+  font-size: 20pt;
+  font-style: normal;
+  margin-top: 20px;
+}
+
+.txt-box3:hover {
+  text-decoration: underline;
+}
+
+.img-div {
+  display: grid;
+  right: auto;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 0;
+  margin: 0 auto;
+}
+
+.promo-img {
+  box-sizing: border-box;
+  width: 100%;
+  height: 200px;
+  right: auto;
+  background-size: cover;
+  margin: 0 auto 5px auto;
+}
+
+.img-bck1 {
+  background: url(/images/promo_iphone5s.jpg) 100% 100% no-repeat;
+}
+
+.img-bck2 {
+  background-image: url(images/promo_iphone5c.jpg);
+}
+
+.img-bck3 {
+  background-image: url(images/promo_30_years.jpg);
+}
+
+.img-bck4 {
+  background-image: url(images/promo_supplier_responsibility.jpg);
+}
+
+footer {
+  display: blocK;
+  box-sizing: border-box;
+  background-color: whitesmoke;
+  right: auto;
+  width: 100%;
+  height: 80px;
+  margin: 0 auto;
+  padding: o 0;
+}
+
+.foot-p {
+  display: inline;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 7pt;
+  text-align: left;
+}
+
+.p-left {
+  padding: 20px 0 10px 10%;
+}
+
+.p-right {
+  padding: 20px auto 10px 50px;
+}
+
+.p-left::after,
+.p-right::after {
+  clear: both;
+}
+
+.p-left a,
+.p-right a,
+.foot-bottom a {
+  text-decoration: none;
+  color: #08c;
+  padding: 0 10px;
+}
+
+.p-left a:hover,
+.p-right a:hover,
+.foot-bottom a:hover {
+  text-decoration: underline;
+}
+
+.foot-bottom {
+  display: block;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 10%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 7pt;
+}
+
+.foot-bottom::before,
+.foot-bottom::after {
+  clear: both;
+}

@@ -19,7 +19,7 @@ ul {
   width: 4000px;
   height: 100%;
   overflow: hidden;
-  animation: swiper 10s steps(1, end) infinite;
+  animation: swiper 10s infinite;
   transition: left 1s linear;
 }
 
