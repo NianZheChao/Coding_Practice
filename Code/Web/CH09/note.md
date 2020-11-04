@@ -15,3 +15,4 @@ animation 常用属性：animation-name，动画名称；animation-duration，�
 # ihover 的使用与学习
 
 边框使用了两个属性，分别是 border-right-color 和 border-bottom-color,设置了他们的颜色；在 hover 属性中设置了 rotate，使得鼠标移上去后会旋转；用 text-shadow 属性美化了 h3 文字，用 border-top 美化了 p 文字；用 opacit 设置了 hover 后图像的不透明度
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>div动态显示</title>
+		<link rel="stylesheet" href="div_Slide.css"/>
+		<script type="text/javascript" >	
+			window.onscroll=function(){
+				var scrollheight=window.pageYOffset || document.documentElement.scrollTop;
+				var leftdiv=document.getElementById('left');
+				var rightdiv=document.getElementById('right')
+				if(scrollheight>200)
+				{
+					leftdiv.style.cssText='animation: move2 1s ease normal forwards;';
+				}
+				
+				if(scrollheight>400)
+				{
+					rightdiv.style.cssText='animation: move3 1s ease normal forwards;';
+				}
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div id="up" class="stn1">Slide_1</div>
+		<div id="left" class="stn2">Slide_2</div>
+		<div id="right" class="stn3">Slide_3</div>
+		
+		
+	
+	</body>
+</html>

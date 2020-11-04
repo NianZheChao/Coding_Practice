@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>网易云音乐</title>
+    <link rel="stylesheet" type="text/css" href="../css_practice/my_web.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="warp">
+      <div class="header">
+        <header>
+          <h2>
+            <a href="#"
+              ><img class="home_svg" src="../web_img/home.png" /> Netease
+              Music</a
+            >
+          </h2>
+          <div class="navegation">
+            <ul>
+              <li>
+                <a href="#">发现音乐</a>
+                <div class="nav_div" style="width: 140px; height: 135px">
+                  <ul>
+                    <li style="padding-top: 5px"><a href="#">推荐</a></li>
+                    <li><a href="#">排行榜</a></li>
+                    <li><a href="#">歌单</a></li>
+                    <li><a href="#">歌手</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#">我的音乐</a>
+                <div class="nav_div" style="width: 140px; height: 135px">
+                  <ul>
+                    <li style="padding-top: 5px"><a href="#">我喜欢的</a></li>
+                    <li><a href="#">我的歌单</a></li>
+                    <li><a href="#">我的歌手</a></li>
+                    <li><a href="#">我的视频</a></li>
+                  </ul>
+                </div>
+              </li>
+
+              <li>
+                <a href="#">音乐人</a>
+                <div class="nav_div" style="width: 140px; height: 205px">
+                  <ul>
+                    <li style="padding-top: 5px"><a href="#">音乐人</a></li>
+                    <li><a href="#">词曲作者</a></li>
+                    <li><a href="#">厂牌/公司</a></li>
+                    <li><a href="#">音乐风格</a></li>
+                    <li><a href="#">语种</a></li>
+                    <li><a href="#">热门</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li>
+                <a href="#">排行榜</a>
+                <div class="nav_div" style="width: 140px; height: 170px">
+                  <ul>
+                    <li style="padding-top: 5px"><a href="#">飙升榜</a></li>
+                    <li><a href="#">新歌榜</a></li>
+                    <li><a href="#">原创榜</a></li>
+                    <li><a href="#">热歌榜</a></li>
+                    <li><a href="#">歌手榜</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </header>
+
+        <div class="play">
+          <div class="imgbox">
+            <img class="img-slide img1" src="../web_img/index2.jpg" />
+            <img class="img-slide img2" src="../web_img/index1.jpg" />
+            <img class="img-slide img3" src="../web_img/index3.jpg" />
+          </div>
+
+          <div class="slide-list">
+            <a href="#"
+              ><span class="slide slide-left" onclick="changeimg()"><</span></a
+            >
+            <a href="#"
+              ><span class="slide slide-right" onclick="changeimg()">></span></a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="main_middle">
+        <div class="show_middle">
+          <div class="show_block">
+            <h2 style="display: inline">热 门 推 荐</h2>
+            <p style="display: inline; margin-left: 50px">
+              华语&nbsp; |&nbsp; 流行 &nbsp; |&nbsp; 摇滚 &nbsp; | &nbsp; 民谣
+              &nbsp; | &nbsp; 电子
+            </p>
+          </div>
+
+          <ul>
+            <li>
+              <a href="web_1.html">
+                <img src="../web_img/L1.jpg" />
+              </a>
+              <p class="picturename">2020年十月最热新歌TOP50</p>
+            </li>
+            <li>
+              <a
+                href="http://www.360doc.com/content/13/0313/21/11334590_271329344.shtml"
+              >
+                <img src="../web_img/L2.jpg" />
+              </a>
+              <p class="picturename">那个曾陪你听过歌的人还在身边吗</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L3.png" />
+              </a>
+              <p class="picturename">私人雷达 | 根据听歌记录为你打造</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L4.png" />
+              </a>
+              <p class="picturename">迪斯科音乐发展简史</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L5.jpg" />
+              </a>
+              <p class="picturename">摆地摊专用BGM，要得就是回头率</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L6.png" />
+              </a>
+              <p class="picturename">【旋律控】超级好听的欧美良曲</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L7.jpg" />
+              </a>
+              <p class="picturename">好好爱这个世界 因为你值得</p>
+            </li>
+            <li>
+              <a href="#">
+                <img src="../web_img/L8.png" />
+              </a>
+              <p class="picturename">长大了和小时候的区别，就是没有梦想…</p>
+            </li>
+          </ul>
+        </div>
+        <br />
+
+        <div class="show_author">
+          <h2>音 乐 人</h2>
+          <table>
+            <tr>
+              <td class="dafenqi" colspan="3" rowspan="2">
+                <a href="#"
+                  ><img
+                    style="width: 300px; height: 300px"
+                    src="../web_img/artist1.png"
+                  />
+                </a>
+                <p>张惠妹</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist2.jpg" /> </a>
+                <p>万晓利</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist3.jpg" /> </a>
+                <p>赵雷</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist4.jpg" /> </a>
+                <p>吴莫愁</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist5.png" /> </a>
+                <p>老狼</p>
+              </td>
+              <td>
+                <a href="web_2.html"><img src="../web_img/artist6.png" /> </a>
+                <p>林俊杰</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist7.png" /> </a>
+                <p>邓紫棋</p>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <a href="#"><img src="../web_img/aritst8.png" /> </a>
+                <p>李荣浩</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist6.jpg" /> </a>
+                <p>陈奕迅</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist9.png" /> </a>
+                <p>五月天</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist10.jpg" /> </a>
+                <p>S.H.E</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist11.png" /> </a>
+                <p>苏打绿</p>
+              </td>
+              <td>
+                <a href="#"><img src="../web_img/artist12.png" /> </a>
+                <p>OneRepublic</p>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="show_banner">
+          <h2>歌 单 推 荐</h2>
+          <div class="_0">
+            <a
+              class="banner_a"
+              href="https://news.mei-shu.org/art/20191101/187819.html"
+              ><img src="../web_img/paimai1.jpg"
+            /></a>
+            <div class="banner_div">
+              <h3>
+                <a href="https://news.mei-shu.org/art/20191101/187819.html"
+                  >新古典゜黄昏下的典雅悲怆</a
+                >
+              </h3>
+              <p>
+                我们甚至失去了黄昏的颜色 当蓝色的夜坠落在世界时
+                没人看见我们手牵着手 从我的窗户中我已经看见
+                在遥远的山顶上落日的祭典 有时候一片太阳 在我的双掌间如硬币燃烧
+                在你熟知的我的哀伤中 我忆及了...
+              </p>
+              <a
+                class="a_2"
+                href="https://news.mei-shu.org/art/20191101/187819.html"
+                >古典</a
+              >
+              <a
+                class="a_2"
+                href="https://news.mei-shu.org/art/20191101/187819.html"
+                >钢琴</a
+              >
+            </div>
+          </div>
+          <div class="banner_total">
+            <a
+              class="banner_a"
+              href="https://news.mei-shu.org/art/20191101/187817.html"
+              ><img src="../web_img/paimai2.jpg"
+            /></a>
+            <div class="banner_div">
+              <h3>
+                <a href="https://news.mei-shu.org/art/20191101/187817.html"
+                  >Dream Pop | 在梦境里相拥于星辰</a
+                >
+              </h3>
+              <p>
+                Dream Pop可以按照字面意思理解为像“梦”一样的流行曲，
+                属于另类摇滚的一个流派。主要用echo效果的吉他和呼吸声比较重的声音处理制造一种迷离的氛围，
+                歌词有时也会有梦境...
+              </p>
+              <a
+                class="a_2"
+                href="https://news.mei-shu.org/art/20191101/187817.html"
+                >摇滚</a
+              >
+              <a
+                class="a_2"
+                href="https://news.mei-shu.org/art/20191101/187817.html"
+                >另类/独立</a
+              >
+            </div>
+          </div>
+          <div class="banner_total">
+            <a
+              style="clear: both"
+              class="banner_a"
+              href="https://news.mei-shu.org/art/20191104/187832.html"
+              ><img src="../web_img/paimai3.jpg"
+            /></a>
+            <div class="banner_div">
+              <h3>
+                <a href="https://news.mei-shu.org/art/20191104/187832.html"
+                  >仲夏夜之梦 迷幻浪漫派对计划</a
+                >
+              </h3>
+              <p>
+                永远还没睡醒 夜满天繁星 湖面映月光环影 斑驳远去孤叶摇曳不定
+                窗外盛夏的气息已来临 我们可以嗅花香听蝉鸣 所有嘈杂的声音
+                永远彻夜回响缠绕在屋顶 他们随黑夜一同坠落远去
+                迎娶了又一个崭新的黎明
+              </p>
+              <a
+                class="a_2"
+                href="https://news.mei-shu.org/art/20191104/187832.html"
+                >华语</a
+              >
+              <a class="a_2" href="#">摇滚</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="art_banner">
+          <h2>云音乐飙升榜</h2>
+          <ul>
+            <li>
+              <i class="rounded-x fb">1</i>
+              <a class="rounded-3x" href="#">经济舱（Live）</a>
+            </li>
+            <li>
+              <i class="rounded-x tw">2</i>
+              <a class="rounded-3x" href="#">我要陪你从午夜到清晨再到黄昏</a>
+            </li>
+            <li>
+              <i class="rounded-x gp">3</i>
+              <a class="rounded-3x" href="#">彩券</a>
+            </li>
+            <li>
+              <i class="rounded-x_ms-un">4</i>
+              <a class="rounded-3x" href="#">声声慢（京韵版）</a>
+            </li>
+            <li>
+              <i class="rounded-x_ms-un">5</i>
+              <a class="rounded-3x" href="#">Candlelight(feat. OHHYUK)</a>
+            </li>
+            <li>
+              <i class="rounded-x_ms-un">6</i>
+              <a class="rounded-3x" href="#">孤独</a>
+            </li>
+          </ul>
+          <div>
+            <a href="#"><img src="../web_img/art1.png" /> </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer1">
+        <footer>
+          <div style="text-align: center">
+            <section>
+              <a href="#">关于我们</a>
+              <a href="#">联系我们</a>
+              <a href="#">加入我们</a>
+              <i class="fa fa-qq"></i>
+              <i class="fa fa-wechat"></i>
+              <i class="fa fa-weibo"></i>
+            </section>
+            <span style="padding: 2px 5px">2005-2018 </span>
+            <span style="padding: 2px 5px">&copy;All Rights Reserved. </span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>
+  <!-- TODO: change the slide picture to CSS3 achievement-->
+  <script type="text/javascript">
+    var index = 0;
+    function changeimg() {
+      index++;
+      var a = document.getElementsByClassName("img-slide");
+      if (index >= a.length) index = 0;
+      for (var i = 0; i < a.length; i++) a[i].style.display = "none";
+      a[index].style.display = "block";
+    }
+    setInterval(changeimg, 2000);
+  </script>
+</html>

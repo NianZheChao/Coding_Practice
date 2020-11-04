@@ -1,0 +1,63 @@
+body{
+	font-family: "微软雅黑";
+	background: #ededed;
+	font-size: 24px;
+}
+a{
+	text-decoration: none;
+	color: #0000ff;
+}
+p{
+	text-indent: 1.75em;
+	line-height: 1.4em;
+}
+
+.logo{
+	background: #0a435e;
+	font-size: 1.75em;
+	border-bottom-style: solid;
+	border-bottom-width: 8px;
+	border-bottom-color: orange;
+}
+h3{
+	color: white;
+	font-size: inherit;
+	letter-spacing: 1px;
+	word-spacing: normal;
+}
+.contentarea h1{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+.contentarea span{
+	color: red;
+}
+p span a{
+	font-weight: bold;
+	color: red;
+}
+
+.navigation li{
+	width: 50%;
+	line-height: 30px;
+	
+	
+}
+.homepagefooter{
+	text-align: center;
+	border-top-style: solid;
+}
+
+ol{
+	list-style-type: none;
+}
+ul li{
+
+	border-style: dotted;
+	border-color: black;
+	border-width: 3px;
+	border-spacing: 6px;
+	list-style-type: none;
+}

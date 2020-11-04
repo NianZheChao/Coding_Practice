@@ -1,0 +1,141 @@
+/* CSS Document */
+/*重置浏览器默认样式*/
+body,ul,input,p,dl,dt,dd,h1,table,tr,td,th,h2,li{margin:0;padding:0; list-style:none; outline:none; border:0;}
+/*全局控制*/
+body{color:black;font-size:12px; font-family:"微软雅黑";}
+/*定义公共样式*/
+a:link,a:visited{text-decoration:none; color:black;}
+a:hover{text-decoration:none;}
+
+/*nav*/
+#nav_bg{
+	width:100%; 
+	height:70px; 
+	background:#fff; 
+	border-bottom:5px solid #d3d3d3;
+}
+.nav{
+	width:980px; 
+	height:70px; 
+	/*margin: 0 15%;*/
+}
+.nav h2{ 
+	height:70px; 
+	float:left;
+}
+.nav ul{float:left;}
+.nav ul li{float:left;}
+.nav ul li a{
+	display:block; 
+	padding:0 20px; 
+	height:70px; 
+	line-height:70px; 
+	font-size:14px; 
+	border-bottom:5px solid #d3d3d3;
+}
+#changeColor{
+	border: 1px solid bisque;
+}
+#reset{
+	border: 1px solid bisque;
+}
+.nav ul li a:hover{
+	color:#e67616;  
+	border-bottom:5px solid #e67616;
+}
+
+/*week*/
+#week{
+	clear: both;
+	width:980px; 
+	height:70px; 
+	margin:10px auto;
+}
+#week li{float:left;}
+#week a{
+	display:inline-block;
+	width:137px; 
+	height:50px; 
+	border:2px solid #ffc393; 
+	text-align:center;
+	padding-top:28px; 
+	background:#FFE8C8; 
+}
+#week .next{border-left:0;}
+#week a:hover{
+	background:#fff; 
+	border-bottom:2px solid #fff;
+}
+/*车次*/
+.table{
+	width:980px;
+	border-collapse:collapse; 
+	margin:0 auto; 
+	border:1px solid #e8e8e8; 
+	font-size:14px;
+}
+
+.table tr{
+	height:70px; 
+	text-align:center;
+	background-color:#B4DAE4;
+	}
+.table .title{
+	background-color:#CDE6ED; 
+	height:30px; 
+	color:#999; 
+	font-size:16px;
+}
+
+.table .even{background-color:#CDE6ED;}
+.txt1,.colors{
+	font-size:14px; 
+	color:#2D6D7D;
+}
+.table .txt2{
+	width:120px; 
+	text-align:left
+}
+.red,.blue{
+	display:inline-block; 
+	width:18px; 
+	height:18px; 
+	background:#2D6D7D; 
+	color:#fff; 
+	line-height:18px; 
+	text-align:center;
+}
+.blue{background:#06F;}
+.buy{ 
+	width:100px; 
+	height:30px; 
+	background:#2D6D7D; 
+	display:inline-block; 
+	line-height:30px; 
+	color:#fff;
+}
+.buy:link,.buy:visited{color:#fff;}
+.buy:hover{background:#ff9942;}
+/*版权*/
+#footer{
+	width:100%; 
+	height:80px; 
+	background:url(../images/footer_bg.png) repeat-x; 
+	color:#555; 
+	text-align:center; 
+	line-height:80px; 
+	margin-top:50px; 
+	font-size:14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

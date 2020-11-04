@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>全选反选不选</title>
+		
+		
+	</head>
+
+	<body>
+		<input type="button" name="" id="selectAll" value="全选" />
+		<input type="button" name="" id="selectNone" value="不选" />
+		<input type="button" name="" id="selectRevert" value="反选" />
+		<div id="items">
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+			<input type="checkbox" name="" id="" value="" /><br />
+		</div>
+		
+		<script type="text/javascript" >
+			var check_all=document.getElementById('selectAll');
+			var check_none=document.getElementById('selectNone');
+			var check_revert=document.getElementById('selectRevert');
+			var check_box=document.getElementById('items');
+			check_all.onclick=function()
+			{
+				var every_input=check_box.getElementsByTagName('input');
+				for(var i=0;i<every_input.length;i++)
+					every_input[i].checked=true;
+			}
+			check_none.onclick=function()
+			{
+				var every_input=check_box.getElementsByTagName('input');
+				for(var i=0;i<every_input.length;i++)
+					every_input[i].checked=false;
+			}
+			check_revert.onclick=function()
+			{
+				var every_input=check_box.getElementsByTagName('input');
+				for(var i=0;i<every_input.length;i++)
+				{
+					if(every_input[i].checked==false)
+						every_input[i].checked=true;
+					else
+						every_input[i].checked=false;
+				}
+					
+			}
+		</script>
+	</body>
+
+</html>

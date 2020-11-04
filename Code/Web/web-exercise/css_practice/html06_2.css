@@ -1,0 +1,26 @@
+body{
+	background-color: #000000;
+}
+div{
+	width: 1080px;
+	height: 125px;
+}
+h3{
+	color: white;
+}
+li{
+	background-color: white;
+	color: black;
+	float: left;
+	list-style-type: none;
+	border-left-style: solid;
+	border-left-color: black;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+	width: 90px;
+	height: 25px;
+	text-align: center;
+}
+.head{
+	background-color: orange;
+}

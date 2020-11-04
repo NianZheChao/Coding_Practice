@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>for循环</title>
+		<!--<link href="skin2.css" rel="stylesheet" type="text/css"/>-->		
+		<link id="style01" href="skin1.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript">
+
+			function setcolor(change_css)
+			{
+				var change=document.getElementById("style01");
+				change.href=change_css;
+			}
+			
+		</script>
+	
+	</head>
+		
+	<body>
+		<!--nav-->
+		<div id="nav_bg">
+			<div class="nav">
+				<h2><img src="images/logo.jpg" /></h2>
+				<ul>
+					<li>
+						<a href="#">汽车票</a>
+					</li>
+					<li>
+						<a href="#">时刻表</a>
+					</li>
+					<li>
+						<a href="#">汽车站</a>
+					</li>
+					<li>
+						<a href="#">酒店预订</a>
+					</li>
+					<li>
+						<a href="#">旅客问答</a>
+					</li>
+					<li>
+						<a href="#" id="changeColor" onclick="setcolor('skin2.css')">换肤</a>
+					</li>
+					<li>
+						<a href="#" id="resetColor" onclick="setcolor('skin1.css')">还原</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+		<!--week-->
+		<ul id="week">
+			<li>
+				<a href="#">01月27日<br/>周三</a>
+			</li>
+			<li>
+				<a href="#" class="next">01月28日<br/>周四</a>
+			</li>
+			<li>
+				<a href="#" class="next">01月29日<br/>周五</a>
+			</li>
+			<li>
+				<a href="#" class="next">01月30日<br/>周六</a>
+			</li>
+			<li>
+				<a href="#" class="next">01月31日<br/>周日</a>
+			</li>
+			<li>
+				<a href="#" class="next">02月01日<br/>周一</a>
+			</li>
+			<li>
+				<a href="#" class="next">02月02日<br/>周二</a>
+			</li>
+		</ul>
+		<!--车次-->
+		<table id="tbl" class="table" border="1">
+			<tr class="title">
+				<th>出发时间</th>
+				<th>始发站/首发站</th>
+				<th>计划车型</th>
+				<th>票价</th>
+				<th>购票</th>
+			</tr>
+			<tr>
+				<td class="txt1">06:30</td>
+				<td class="txt2"><span class="red">始</span>省汽车客运站<br/><span class="blue">终</span>阳江</td>
+				<td>空调坐席</td>
+				<td>￥<span class="colors">100</span></td>
+				<td>
+					<a href="#" class="buy">购票</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="txt1">07:30</td>
+				<td class="txt2"><span class="red">始</span>省汽车客运站<br/><span class="blue">终</span>阳江</td>
+				<td>空调坐席</td>
+				<td>￥<span class="colors">100</span></td>
+				<td>
+					<a href="#" class="buy">购票</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="txt1">08:30</td>
+				<td class="txt2"><span class="red">始</span>省汽车客运站<br/><span class="blue">终</span>阳江</td>
+				<td>空调坐席</td>
+				<td>￥<span class="colors">100</span></td>
+				<td>
+					<a href="#" class="buy">购票</a>
+				</td>
+			</tr>
+			<tr>
+				<td class="txt1">09:30</td>
+				<td class="txt2"><span class="red">始</span>省汽车客运站<br/><span class="blue">终</span>阳江</td>
+				<td>空调坐席</td>
+				<td>￥<span class="colors">100</span></td>
+				<td>
+					<a href="#" class="buy">购票</a>
+				</td>
+			</tr>
+		</table>
+		<!--footer-->
+		<div id="footer">赶快回家版权所有209京ICP备08001421号&nbsp;&nbsp;京公网安备110108007702</div>
+	</body>
+
+</html>

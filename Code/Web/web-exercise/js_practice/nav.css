@@ -1,0 +1,253 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.nav{
+	background-color: rgba(0, 0, 0, 0.9);
+	height: 44px;
+	width: 100%;
+	position: fixed;
+	text-align: center;
+	display: block;
+	padding: 0 14%;
+	z-index: 999;
+	min-width:670px;
+	overflow: hidden;
+}
+
+.nav_small  {
+	display: none;
+	overflow: hidden;
+}
+
+.nav ul li {
+	float: left;
+	width: 8%;
+	height: 100%;
+	list-style: none;
+}
+/*.nav ul li:last-child,.nav ul li:nth-last-of-type(2) {
+	display: none;
+	margin-left: 56%;
+}*/
+.nav ul li a,.nav_small ul li a {
+	text-decoration: none;
+	font-size: 13px;
+	font-family: , sans-serif;
+	color:white;
+	line-height: 44px;
+	transition: all 0.3s;
+	display: inline-block;
+	height: 44px;
+}
+
+.nav ul li svg{
+	padding: 0px;
+	width: 16px;
+}
+
+.nav ul li a:hover,.nav_small ul li a:hover {
+	color: rgba(220, 220, 220, 0.7);
+}
+
+.searchdiv{
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	width: 50%;
+	margin-left: 25%;
+	background-color: rgba(0, 0, 0, 0.9);
+	transition:  all 0.2s; 
+	opacity: 0;
+}
+
+.searchdiv img{
+
+	margin:0 15px;
+}
+.searchdiv input{
+	background: none;
+	display: inline-block;
+	position: absolute;
+	border: none;
+	height: 44px;
+    outline: none;
+    color: white;
+   	font-size: 15px;
+   	width: 80%;
+}
+.searchdiv input::-webkit-input-placeholder{
+	color: #888;
+}
+.searchdiv input::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+.searchdiv div{
+	transition: all 0.6s;
+}
+
+.searchdiv .searchlist{
+	margin: 8px;
+	margin-bottom: 20px;
+}
+
+.searchdiv .searchlist span{
+	color: #aaa;
+	font-size: 12px;
+	margin-left: 40px;
+}
+
+.searchdiv .searchlist li{
+	
+	list-style: none;
+	line-height: 30px;
+	margin: 5px 0;
+}
+
+.searchdiv .searchlist li a{
+	display: block;
+	text-decoration: none;
+	color: white;
+	padding-left: 60px;
+	font-size: 13px;
+}
+
+.searchdiv .searchlist li a:hover{
+	
+	color: #6bf;
+	font-size: 13px;
+	background-color: #444;
+}
+
+.bagdiv{
+	display: none;
+	position: fixed;
+	float: right;
+	width: 300px;
+	height: auto;
+	right: 4%;
+	top: 60px;
+	background-color:rgba(0, 0,0, 0.9) ;
+	border-radius: 5px;
+	z-index: 999;
+	outline:none;
+}
+
+.bagdiv .bagdiv_horn{
+	position: absolute;
+	display: inline-block;
+	top: -20px;
+	right: 50%;
+	height:0;
+	width:0;
+	border: 10px solid transparent;
+	border-bottom: 10px solid rgba(0, 0,0, 0.9)  ;
+}
+
+.bagdiv div span{
+	color: #999;
+	font: bold;
+	display: block;
+	line-height: 100px;
+	text-align: center;
+}
+.bagdiv div li{
+	list-style: none;
+}
+.bagdiv div li a{
+	color: #999;
+	display: block;
+	line-height: 50px;
+	border-top:1px solid #555 ;
+	margin: 0 20px;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+.bagdiv div li a:hover{
+	color: #fff;
+	text-decoration: underline;
+}
+
+@media only screen and (max-width:765px ) {
+
+		.nav{
+			height: 48px;
+			line-height: 48px;
+			min-width:0px;
+			padding: 0px;
+		}
+		
+		.nav ul li{
+			display: none !important;
+		}
+		
+		.nav ul li:nth-of-type(1) {
+			position: absolute;
+			display: block !important;
+			width:auto;
+			width:20px;
+			left: 49%;
+		}
+		.nav ul li:nth-last-of-type(2) {
+			float: left;
+			display: block !important;
+			width:auto;
+			margin-left: 15px;
+		}
+		.nav ul li:nth-last-of-type(3) {
+			float: right;
+			display: block !important;
+			width:auto;
+			margin-right: 15px;
+		}
+
+		.nav ul li svg{
+			width: 24px;
+			height: 48px;
+		}
+
+		.nav_small  {
+			display: none;
+			margin-top: 47px;
+			background-color: rgba(0, 0, 0, 0.9);
+			height: 0px;
+			width: 100%;
+			position: fixed;
+			border-top:1px solid #333 ;
+			z-index: 999;
+			transition: all 0.5s ease-in-out;
+			
+		}
+		.nav_small ul{
+			opacity:0;
+			transition: all 0.5s;
+			height: 200px;
+			margin-top: -20px;
+			
+		}
+		
+		.nav_small ul li{
+			height: 16.66%;
+		}
+		.nav_small ul li a{
+			display: block !important;
+			font-size: 15px;
+			margin: 0  40px;
+			height: 100%;
+			border-bottom:1px solid #333 ;
+		}
+		.nav  #nav_small_close{
+			display: none;
+		}
+		
+		.bagdiv{
+			right: 5px;
+		}
+		.bagdiv .bagdiv_horn{
+			right: 10px !important;	
+			display: block !important;
+		}
+}
