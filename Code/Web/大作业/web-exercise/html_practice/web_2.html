@@ -1,90 +1,161 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>莫奈</title>
-		<style type="text/css">
-			body{
-				background: whitesmoke;
-			}
-			.head{
-				width: 100%;
-				height: 300px;
-				background: url(../web_img/beijing.png);
-			}
-			.author{
-				height: 430px;
-				width: 280px;
-				border: 5px solid white;
-				margin-left: 160px;
-				margin-top: -150px;
-				background: white;
-			}
-			.author img{
-				/* height: 120px; */
-				width: 120px;
-			}
-			.paint{
-				/* height: 700px; */
-				width: 800px;
-				border: 5px solid white;
-				margin-left: 470px;
-				margin-top: -250px;
-				background: white;
-				text-align: center;
-			}
-			.p1{
-				width: 600px;
-			}
-			.paint h2{
-				color: cadetblue;
-				text-align: left;
-				border-bottom: 1px solid whitesmoke;
-			}
-			.p2{
-				width: 200px;
-				height: 300px;
-			}
-			.p3{
-				width: 200px;
-				
-			}
-		</style>
-	</head>
-	<body>
-		<div class="head">
-		</div>
-		<div class="author">
-			<img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=adad621a5d43fbf2c52ca1258845adbd/43a7d933c895d143c6baa3317df082025baf07d7.jpg" style="float: left;">
-			<div style="border-left: 5px;">
-				<p>莫奈 <i style="color: gray;">艺术家</i></p>
-				<p>作品：<a style="color: orangered;">12</a></p>
-				<p>访问量：<a style="color: orangered;">547967</a></p>
-				<p>领域：印象派</p>
-			</div>
-			
-			<p style="clear: both;"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;克劳德·莫奈</strong> （Claude Monet，1840年11月14日－1926年12月5日），
-			法国画家，被誉为“印象派领导者”，是印象派代表人物和创始人之一。
-莫奈是法国最重要的画家之一，印象派的理论和实践大部分都有他的推广。莫奈擅长光与影的实验与表现技法。
-他最重要的风格是改变了阴影和轮廓线的画法，在莫奈的画作中看不到非常明确的阴影，也看不到突显或平涂式的轮廓线。
-光和影的色彩描绘是莫奈绘画的最大特色。</p>
-		</div>
-		<div class="paint">
-			<p style="font-size: 38px;">莫奈--日出·印象</p>
-			<p>    类别：国画作者： 莫奈 上传时间： 2017-12-25 19:54</p>
-			<img class="p1" src="http://5b0988e595225.cdn.sohucs.com/images/20181118/d01207aa2ab04a05b667abdfa451fe13.jpeg"/>
-			<p style="text-align: left;">《日出·印象》法国 莫奈 布上油画 纵48×横63厘米 巴黎马蒙达博物馆藏</p>
-			<h2>相关作品</h2>
-			<img class="p3" src="http://5b0988e595225.cdn.sohucs.com/images/20181118/9d924ce0b34442028cf3dfad52712c6b.jpeg" />
-			<!-- <p style="float: left;"> 《象鼻山西边的象鼻子》</p> -->
-			<img class="p2" src="http://5b0988e595225.cdn.sohucs.com/images/20181118/c317c745b9d242f3ba976a5d520cc1fd.jpeg"/>
-			<!-- <p>《撑阳伞的女子》</p> -->
-			<img class="p3" src="http://5b0988e595225.cdn.sohucs.com/images/20181118/75b3e25f6d274c86829258a8dde21816.jpeg" />
-			<!-- <p>《冬天的国会大厦》</p> -->
-			<img class="p2" src="http://5b0988e595225.cdn.sohucs.com/images/20181118/b62fdf1290b34300b47bfa631bb512a2.jpeg"/>
-			<!-- <p>《穿日本和服的卡美伊·莫奈》</p> -->
-			
-			
-		</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <title>歌单 - 网抑云音乐</title>
+    <style type="text/css">
+      body {
+        background: whitesmoke;
+      }
+      .head {
+        width: 100%;
+        height: 300px;
+        background: url(../web_img/beijing.png);
+      }
+      .author {
+        height: 430px;
+        width: 280px;
+        border: 5px solid white;
+        margin-left: 160px;
+        margin-top: -150px;
+        background: white;
+      }
+      .author img {
+        /* height: 120px; */
+        width: 120px;
+      }
+      .title {
+        /* height: 700px; */
+        width: 800px;
+        border: 5px solid white;
+        margin-left: 470px;
+        margin-top: -500px;
+        background: white;
+        text-align: center;
+      }
+      .ph {
+        float: left;
+        margin: 10px;
+      }
+      .p1 {
+        width: 600px;
+      }
+      .title h2 {
+        color: cadetblue;
+        text-align: left;
+        border-bottom: 1px solid whitesmoke;
+      }
+      .p2 {
+        width: 200px;
+        height: 300px;
+      }
+      .p3 {
+        width: 200px;
+      }
+      .comment {
+        height: 100px;
+        border-top: 1px solid #987cb9;
+        border-bottom: 1px solid #987cb9;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head"></div>
+    <div class="author">
+      <img src="../web_img/L3.png" style="float: left" />
+      <div style="border-left: 10px">
+        <p>歌单 <i style="color: gray">念念安娜 </i>创建</p>
+        <p>播放：<a style="color: orangered">96125</a></p>
+        <p>分享：<a style="color: orangered">4797</a></p>
+        <p>标签：华语 | 工作 | 放松</p>
+      </div>
+
+      <p style="clear: both">
+        <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;介绍：</strong>
+        没有一朵后浪不想摆摊！
+        俗话说，站在风口上，猪都能飞起来。地摊经济的风已经吹起来了，你准备好了吗？
+        这让我联想起N年前看过的文字，一位小男孩在《我的理想》中写道：我想当一名Cg，当看到我的妈妈在街边卖红薯时，可以慢慢赶她走……
+        希望地摊经济不是以应临时之需，而是能让底层老百姓持续享受到更好的待遇。
+        推荐的歌曲比较欢快治愈。小伙伴，加油！
+      </p>
+    </div>
+    <div class="title">
+      <p style="font-size: 38px">摆地摊专用BGM，要的就是回头率！</p>
+      <p style="color: gray">2020-06-04 创建</p>
+      <p style="text-align: left; color: gray">精彩评论</p>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/aritst8.png" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>莫得桃花</strong>：哈哈哈哈啊哈哈这标题我笑着进来了哈哈哈哈哈
+        </p>
+        <p style="float: right; font-size: 12px">赞：(6423) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月4日 17：08</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/artist1.png" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>爱上肘子刘</strong>：激动的把摊子都给我掀了
+        </p>
+        <p style="float: right; font-size: 12px">赞：(5823) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月5日 18：40</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/artist10.jpg" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>灯灯withyou</strong
+          >：先收藏，万一呢哈哈哈哈，如果我开张了请姐妹们来光顾我
+        </p>
+        <p style="float: right; font-size: 12px">赞：(5346) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月5日 07：24</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/artist9.png" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>海华可生完了</strong
+          >：哈哈哈哈我做错了什么吗？？？我有好好学习的为什么要推我这个哈哈
+        </p>
+        <p style="float: right; font-size: 12px">赞：(5023) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月5日 12：53</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/artist6.png" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>账号已注销</strong
+          >：我看你们摆摊不是为了挣钱，你们就想在夏夜晚风里喝酒，聊天，搞破鞋。
+        </p>
+        <p style="float: right; font-size: 12px">赞：(4992) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月9日 12：48</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/L6.png" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>Mengjia_R</strong>：都去摆地摊了怎么还有VIP的歌 这不合理
+        </p>
+        <p style="float: right; font-size: 12px">赞：(4398) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月9日 17：48</p>
+      </div>
+      <div class="comment">
+        <div class="ph">
+          <img src="../web_img/artist4.jpg" width="70px" height="70px" />
+        </div>
+        <p style="text-align: left; font-size: 18px">
+          <strong>关山三</strong>：我的耳坠，塑料镯子可能配不上这些曲子。
+        </p>
+        <p style="float: right; font-size: 12px">赞：(4238) | 回复</p>
+        <p style="text-align: left; color: #987cb9">6月10日 02：38</p>
+      </div>
+    </div>
+  </body>
 </html>

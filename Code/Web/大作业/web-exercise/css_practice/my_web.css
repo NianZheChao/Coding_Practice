@@ -162,6 +162,7 @@ header ul li ul li:hover a {
   text-align: center;
 }
 .show_author h2 {
+  padding-bottom: 10px;
   border-bottom: 2px solid #15a29c;
 }
 .show_author img {
