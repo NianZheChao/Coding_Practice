@@ -83,19 +83,6 @@ header ul li ul li:hover a {
   display: block;
   /* position: relative; */
 }
-.imgbox ul li {
-  float: left;
-  display: inline;
-}
-/* .img1{
-	display:none;
-}
-.img2{
-	display: none;
-}
-.img3{
-	display: none;
-} */
 .slide {
   position: absolute;
   top: 50%;
@@ -147,6 +134,7 @@ header ul li ul li:hover a {
 }
 .show_middle img:hover {
   transform: scale(1.15);
+  transition: transform 0.75s;
 }
 .show_middle {
   margin-left: 10px;

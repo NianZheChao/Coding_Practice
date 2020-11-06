@@ -48,6 +48,9 @@
         font-size: 12px;
         color: #666;
       }
+      .nav_detail {
+        margin-top: 130px;
+      }
       .nav_detail p {
         line-height: 25px;
         font-size: 18px;
@@ -57,6 +60,24 @@
       .artists img {
         padding: 10px;
       }
+      .album {
+        height: 200px;
+      }
+      .album-box {
+        float: left;
+        width: 170px;
+        height: 170px;
+        margin: 20px;
+      }
+      .album-box img {
+        width: 150px;
+        height: 150px;
+        /* margin: 20px; */
+      }
+      .album-box img:hover {
+        transform: scale(1.2);
+        transition: transform 0.75s;
+      }
     </style>
   </head>
   <body>
@@ -65,6 +86,27 @@
         <h1>林俊杰</h1>
       </div>
       <img src="../web_img/sub_1png.png" />
+      <div class="album">
+        <h2>近期专辑</h2>
+        <div class="album-box">
+          <a href="/#"> <img src="../web_img/al1.webp" /></a>
+          <p>Like You Do 如你</p>
+          <p style="color: #666">2020-10-20</p>
+        </div>
+        <div class="album-box">
+          <a href="/#"><img src="../web_img/al2.jpg" /></a>
+          <p>幸存者 Drifter</p>
+          <p style="color: #666">2020-10-20</p>
+        </div>
+        <div class="album-box">
+          <a href="/#"><img src="../web_img/al3.webp" /></a>
+          <p>交换余生</p>
+          <p style="color: #666">2020-09-16</p>
+        </div>
+
+        <!-- <img src="../web_img/al4.webp" alt="" />
+        <img src="../web_img/al5.webp" alt="" /> -->
+      </div>
       <div class="nav_detail">
         <h3>艺人介绍</h3>
         <p>
