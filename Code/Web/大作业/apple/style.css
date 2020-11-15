@@ -1,15 +1,13 @@
-
-
 .text {
   color: white;
   text-decoration: none;
 }
-.wrap{
-	max-width:1544px;
-	min-width:920px
+.wrap {
+  max-width: 1544px;
+  min-width: 920px;
 }
-header ul li a{
-	text-decoration: none;
+header ul li a {
+  text-decoration: none;
 }
 
 header ul li {
@@ -20,9 +18,7 @@ header ul li {
   float: left;
   display: inline-block;
   margin-inline: 20px;
-
 }
-
 
 header nav {
   margin: 0 auto;
@@ -33,12 +29,11 @@ header nav {
   background-color: black;
 }
 
-
 .main_top {
   background-color: black;
 }
-.main_center{
-	background-color: white;
+.main_center {
+  background-color: white;
 }
 .msg {
   width: 60%;
@@ -55,14 +50,14 @@ header nav {
   text-align: center;
   text-decoration: none;
 }
-.msg1{
-	width: 60%;
-	display: block;
-	align-self: center;
-	position: relative;
-	margin: 40px auto;
+.msg1 {
+  width: 60%;
+  display: block;
+  align-self: center;
+  position: relative;
+  margin: 40px auto;
 }
-.msg1 a{
+.msg1 a {
   color: black;
   display: block;
   align-self: center;
@@ -114,7 +109,7 @@ header nav {
 }
 
 .img-bck1 {
-  background: url(/images/promo_iphone5s.jpg) 100% 100% no-repeat;
+  background: url(images/Every_one.png) 100% 100% no-repeat;
 }
 
 .img-bck2 {
@@ -175,17 +170,39 @@ footer {
   text-decoration: underline;
 }
 
-.foot-bottom {
-  display: block;
-  box-sizing: border-box;
-  float: left;
-  padding: 0 10%;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 7pt;
+.foot_top {
+  font-size: 1em;
+  font-family: STHeiti;
 }
 
-.foot-bottom::before,
-.foot-bottom::after {
-  clear: both;
+.foot_top ul {
+  list-style: none;
 }
+
+.foot_div {
+  font-size: 12px;
+  width: 10%;
+  float: left;
+  margin-left: 100px;
+  margin-right: 100px;
+  line-height: 20px;
+}
+.foot_div li {
+  color: gray;
+}
+.foot_div li:hover {
+  color: black;
+}
+/*
+.footer_call {
+  float: left;
+  margin: 20px;
+  color: #666;
+  border-bottom: 2px solid #666;
+}
+.footer_links {
+  float: left;
+}
+.footer_legal {
+  float: left;
+} */

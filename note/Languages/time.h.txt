@@ -1,0 +1,201 @@
+C语言获取系统时间的几种方式
+
+C语言中如何获取时间？精度如何？
+1 使用time_t time( time_t * timer ) 精确到秒
+2 使用clock_t clock() 得到的是CPU时间 精确到1/CLOCKS_PER_SEC秒
+3 计算时间差使用double difftime( time_t timer1, time_t timer0 )
+4 使用DWORD GetTickCount() 精确到毫秒
+5 如果使用MFC的CTime类，e69da5e6ba903231313335323631343130323136353331333330356230可以用CTime::GetCurrentTime() 精确到秒
+6 要获取高精度时间，可以使用
+BOOL QueryPerformanceFrequency(LARGE_INTEGER *lpFrequency)
+获取系统的计数器的频率
+BOOL QueryPerformanceCounter(LARGE_INTEGER *lpPerformanceCount)
+获取计数器的值
+然后用两次计数器的差除以Frequency就得到时间。
+7 Multimedia Timer Functions
+The following functions are used with multimedia timers.
+timeBeginPeriod/timeEndPeriod/timeGetDevCaps/timeGetSystemTime
+//*********************************************************************
+//用标准C实现获取当前系统时间的函数
+一.time()函数
+time(&rawtime)函数获取当前时间距1970年1月1日的秒数，以秒计数单位，存于rawtime 中。
+#include "time.h"
+void main ()
+{
+time_t rawtime;
+struct tm * timeinfo;
+time ( &rawtime );
+timeinfo = localtime ( &rawtime );
+printf ( "/007The current date/time is: %s", asctime (timeinfo) );
+exit(0);
+}
+=================
+#include -- 必须的时间函数头文件
+time_t -- 时间类型（time.h 定义是typedef long time_t; 追根溯源，time_t是long）
+struct tm -- 时间结构，time.h 定义如下：
+int tm_sec;
+int tm_min;
+int tm_hour;
+int tm_mday;
+int tm_mon;
+int tm_year;
+int tm_wday;
+int tm_yday;
+int tm_isdst;
+time ( &rawtime ); -- 获取时间，以秒计，从1970年1月一日起算，存于rawtime
+localtime ( &rawtime ); -- 转为当地时间，tm 时间结构
+asctime （）-- 转为标准ASCII时间格式：
+星期 月 日 时：分：秒 年
+-----------------------------------------------------------------------------
+二.clock()函数,用clock()函数，得到系统启动以后的毫秒级时间，然后除以CLOCKS_PER_SEC，就可以换成“秒”，标准c函数。
+clock_t clock ( void );
+#include
+clock_t t = clock();
+long sec = t / CLOCKS_PER_SEC;
+他是记录时钟周期的，实现看来不会很精确，需要试验验证；
+---------------------------------------------------------------------------
+三.gettime(&t); 据说tc2.0的time结构含有毫秒信息
+#include
+#include
+int main(void)
+{
+struct time t;
+gettime(&t);
+printf("The current time is: %2d:%02d:%02d.%02d/n",
+t.ti_hour, t.ti_min, t.ti_sec, t.ti_hund);
+return 0;
+}
+time 是一个结构体，， 其中成员函数 ti_hund 是毫秒。。。
+--------------------------------------------------------------------------------
+四.GetTickCount(),这个是windows里面常用来计算程序运行时间的函数；
+DWORD dwStart = GetTickCount();
+//这里运行你的程序代码
+DWORD dwEnd = GetTickCount();
+则(dwEnd-dwStart)就是你的程序运行时间, 以毫秒为单位
+这个函数只精确到55ms，1个tick就是55ms。
+--------------------------------------------------------------------------------
+五.timeGetTime()t,imeGetTime()基本等于GetTickCount()，但是精度更高
+DWORD dwStart = timeGetTime();
+//这里运行你的程序代码
+DWORD dwEnd = timeGetTime();
+则(dwEnd-dwStart)就是你的程序运行时间, 以毫秒为单位
+虽然返回的值单位应该是ms,但传说精度只有10ms。
+=========================================
+//*****************************************************************Unix
+##unix时间相关,也是标准库的
+//*********************************************************************
+1.timegm函数只是将struct tm结构转成time_t结构,不使用时区信息;
+time_t timegm(struct tm *tm);
+2.mktime使用时区信息
+time_t mktime(struct tm *tm);
+timelocal 函数是GNU扩展的与posix函数mktime相当
+time_t timelocal (struct tm *tm);
+3.gmtime函数只是将time_t结构转成struct tm结构,不使用时区信息;
+struct tm * gmtime(const time_t *clock);
+4.localtime使用时区信息
+struct tm * localtime(const time_t *clock);
+1.time获取时间，stime设置时间
+time_t t；
+t = time(&t);
+2.stime其参数应该是GMT时间,根据本地时区设置为本地时间;
+int stime(time_t *tp)
+3.UTC=true 表示采用夏时制;
+4.文件的修改时间等信息全部采用GMT时间存放,不同的系统在得到修改时间后通过localtime转换成本地时间;
+5.设置时区推荐使用setup来设置;
+6.设置时区也可以先更变/etc/sysconfig/clock中的设置 再将ln -fs /usr/share/zoneinfo/xxxx/xxx /etc/localtime 才能重效
+time_t只能表示68年的范围，即mktime只能返回1970-2038这一段范围的time_t
+看看你的系统是否有time_t64，它能表示更大的时间范围
+//***************************************************************windows
+##Window里面的一些不一样的
+//*********************************************************************
+一.CTime () 类VC编程一般使用CTime类 获得当前日期和时间
+CTime t = GetCurrentTime();
+SYSTEMTIME 结构包含毫秒信息
+typedef struct _SYSTEMTIME {
+WORD wYear;
+WORD wMonth;
+WORD wDayOfWeek;
+WORD wDay;
+WORD wHour;
+WORD wMinute;
+WORD wSecond;
+WORD wMilliseconds;
+} SYSTEMTIME, *PSYSTEMTIME;
+SYSTEMTIME t1;
+GetSystemTime(&t1)
+CTime curTime(t1);
+WORD ms = t1.wMilliseconds;
+SYSTEMTIME sysTm;
+::GetLocalTime(&sysTm);
+在time.h中的_strtime() //只能在windows中用
+char t[11];
+_strtime(t);
+puts(t);
+//*****************************
+获得当前日期和时间
+CTime tm=CTime::GetCurrentTime();
+CString str=tm.Format("%Y-%m-%d");
+在VC中，我们可以借助CTime时间类，获取系统当前日期，具体使用方法如下：
+CTime t = CTime::GetCurrentTime(); //获取系统日期，存储在t里面
+int d=t.GetDay(); //获得当前日期
+int y=t.GetYear(); //获取当前年份
+int m=t.GetMonth(); //获取当前月份
+int h=t.GetHour(); //获取当前为几时
+int mm=t.GetMinute(); //获取当前分钟
+int s=t.GetSecond(); //获取当前秒
+int w=t.GetDayOfWeek(); //获取星期几，注意1为星期天，7为星期六
+二.CTimeSpan类
+如果想计算两段时间的差值，可以使用CTimeSpan类，具体使用方法如下：
+CTime t1( 1999, 3, 19, 22, 15, 0 );
+CTime t = CTime::GetCurrentTime();
+CTimeSpan span=t-t1; //计算当前系统时间与时间t1的间隔
+int iDay=span.GetDays(); //获取这段时间间隔共有多少天
+int iHour=span.GetTotalHours(); //获取总共有多少小时
+int iMin=span.GetTotalMinutes();//获取总共有多少分钟
+int iSec=span.GetTotalSeconds();//获取总共有多少秒
+------------------------------------------------------------------------------
+三._timeb()函数
+_timeb定义在SYS/TIMEB.H，有四个fields
+dstflag
+millitm
+time
+timezone
+void _ftime( struct _timeb *timeptr );
+struct _timeb timebuffer;
+_ftime( &timebuffer );
+取当前时间:文档讲可以到ms,有人测试,好象只能到16ms!
+
+四.设置计时器
+定义TIMER ID
+#define TIMERID_JISUANFANGSHI 2
+在适当的地方设置时钟,需要开始其作用的地方;
+SetTimer(TIMERID_JISUANFANGSHI,200,NULL);
+在不需要定时器的时候的时候销毁掉时钟
+KillTimer(TIMERID_JISUANFANGSHI);
+对应VC程序的消息映射
+void CJisuan::OnTimer(UINT nIDEvent)
+{switch(nIDEvent)}
+---------------------------------------------------------------------------------------
+##如何设定当前系统时间---------------------------------------windows
+SYSTEMTIME m_myLocalTime,*lpSystemTime;
+m_myLocalTime.wYear=2003;
+m_myLocalTime.wM;
+m_myLocalTime.wDay=1;
+m_myLocalTime.wHour=0;
+m_myLocalTime.wMinute=0;
+m_myLocalTime.wSec;
+m_myLocalTime.wMillisec;
+lpSystemTime=&m_myLocalTime;
+if( SetLocalTime(lpSystemTime) ) //此处换成 SetSystemTime( )也不行
+MessageBox("OK !");
+else
+MessageBox("Error !");
+SYSTEMTIME m_myLocalTime,*lpSystemTime;
+m_myLocalTime.wYear=2003;
+m_myLocalTime.wM;
+m_myLocalTime.wDay=1;
+lpSystemTime=&m_myLocalTime;
+if( SetDate(lpSystemTime) ) //此处换成 SetSystemTime( )也不行
+MessageBox("OK !");
+else
+MessageBox("Error !"); 
