@@ -1,5 +1,18 @@
 # C语言学习笔记
 
+## 循环
+
+### while循环
+
+```C
+//while循环的炫酷写法
+while(scanf("%d",&a)){   //节省时间开销可以写为 scanf("%d",&a) != EOF
+    /**************/
+    printf("%d",a);
+}
+//scanf与printf的返回值为其中的数据项数，即 % 的个数
+```
+
 ## 数组
 
 ### 创建数组
@@ -155,6 +168,26 @@ int *GetNum(int x) {
     return &num[x];  //返回一个地址
 }
 ```
+
+用指针函数的方式返回数组
+
+```C
+//函数返回数组（返回数组指针）
+int *solution(){
+    int a[100];
+    a[0] = 1;
+    return a;
+}
+
+int main(){
+    int *b;
+    b = solution();
+    printf("%d",a[0]);
+}
+//结果输出1
+```
+
+
 
 ### 函数指针
 
