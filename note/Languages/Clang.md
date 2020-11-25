@@ -137,6 +137,21 @@ p = &k;
 char *a = “abcd”; //此时"abcd"存放在常量区。通过指针只可以访问字符串常量，而不可以改变它。
 
 char a[20] = “abcd”； //此时 "abcd"存放在栈。可以通过指针去访问和修改数组内容。
+    
+int main(){
+    char *a;
+    a = (char *)malloc(100 * sizeof(char));
+
+    //char a[100];
+
+    scanf("%s",a); //写&a也正确 ？？？？
+    //输入 123456
+    printf("%s\n",a);       //输出 123456
+    printf("%s\n",&a[3]);   //输出 456
+    printf("%p\n",a[3]);    //输出 00000034
+    printf("%c\n",a[3]);    //输出 4
+    return 0;
+}
 ```
 
 ### 指针函数
